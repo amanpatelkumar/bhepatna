@@ -1,9 +1,23 @@
 {
  "url": "",
- "whatsapp": "",
- "phone": "",
+ "whatsapp": "919128662623",
+ "phone": "+919128662623",
  "hours": "Open Daily: 9:30 AM – 9:00 PM",
  "opens": "09:30",
  "closes": "21:00",
- "ordersUrl": ""
+ "ordersUrl": "",
+ "banner": {
+  "on": false,
+  "title": "",
+  "text": "",
+  "link": "",
+  "linkText": ""
+ },
+ "googleRating": "",
+ "googleReviewUrl": "",
+ "email": "",
+ "gstin": "",
+ "state": "",
+ "gstRate": 18,
+ "hsn": "8536"
 }
