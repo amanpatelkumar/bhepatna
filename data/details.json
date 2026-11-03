@@ -1,0 +1,128 @@
+{
+ "fan": {
+  "short": "High-speed 100% copper motor fan with anti-dust finish for humid summers.",
+  "d": "Engineered for continuous daily operation during hot and humid Bihar summers. The 100% copper double ball-bearing motor and aerodynamic blades deliver wide-angle air throw even at low voltage.",
+  "f": [
+   "100% Copper double ball-bearing motor",
+   "Aerodynamic rust-free blades for high air delivery",
+   "Dust-resistant easy-wipe coat",
+   "Works smoothly on home inverters & wall regulators"
+  ],
+  "w": [
+   "2 Years Manufacturer Warranty",
+   "Covers motor winding and internal electrical defects"
+  ]
+ },
+ "cooler": {
+  "short": "Heavy-duty air cooler with dense honeycomb pads, ice chamber & inverter support.",
+  "d": "Designed for peak summer heat. High-density honeycomb cooling pads retain water longer to deliver chilled air across bedrooms and halls while running smoothly on home inverters.",
+  "f": [
+   "Thick anti-bacterial honeycomb cooling pads",
+   "Inverter-compatible low-power motor",
+   "Castor wheels & water level indicator",
+   "Thermal overload motor protection"
+  ],
+  "w": [
+   "1 Year Comprehensive Brand Warranty",
+   "Covers fan motor, submersible pump and controls"
+  ]
+ },
+ "mixer": {
+  "short": "High-torque copper motor mixer grinder with 304 food-grade stainless steel jars.",
+  "d": "Built for tough Indian kitchen grinding—from dry turmeric and masalas to smooth idli batters, chutneys, and shakes. Includes anti-slip vacuum feet and overload circuit protection.",
+  "f": [
+   "High-torque motor with overload breaker",
+   "Heavy-gauge 304 stainless steel leak-proof jars",
+   "Razor-sharp balanced multi-purpose SS blades",
+   "3-speed rotary control with pulse mode"
+  ],
+  "w": [
+   "2 Years on Product (Up to 5 Years on Motor)",
+   "Covers motor assembly and manufacturing defects"
+  ]
+ },
+ "induction": {
+  "short": "Fast flameless induction cooktop with Indian preset menus & voltage surge guard.",
+  "d": "Cook faster while keeping your kitchen cool. Direct electromagnetic heating transfers energy straight to the vessel base, saving electricity with one-touch Indian menu presets.",
+  "f": [
+   "Indian preset menus (Roti, Dal, Rice, Milk, Boil)",
+   "Auto pan-detection & overheat safety cut-off",
+   "Micro-crystal shatter-resistant glass top",
+   "In-built high/low voltage surge protection"
+  ],
+  "w": [
+   "1 Year Manufacturer Warranty",
+   "Covers induction coil, PCB board and touch/button panel"
+  ]
+ },
+ "iron": {
+  "short": "Quick-heat non-stick soleplate iron with precision fabric dial & thermal cut-off.",
+  "d": "Glides effortlessly over cotton, linen, silk, and uniforms without sticking. Features a 360-degree swivel cord to prevent wrist strain and an automatic thermal safety fuse.",
+  "f": [
+   "PTFE non-stick coated smooth soleplate",
+   "Variable fabric temperature control dial",
+   "Instant heating indicator & thermal safety fuse",
+   "360° swivel cord for easy movement"
+  ],
+  "w": [
+   "1 to 2 Years Brand Replacement/Service Warranty",
+   "Covers heating element and thermostat assembly"
+  ]
+ },
+ "geyser": {
+  "short": "Anti-rust glass-lined water heater with PUF insulation & multi-safety valve.",
+  "d": "Delivers piping hot water quickly on winter mornings while keeping electricity bills low with thick PUF insulation and BEE 5-Star efficiency. Built to withstand hard borewell water.",
+  "f": [
+   "Anti-corrosive glass-lined inner tank",
+   "High-density PUF insulation keeps water hot longer",
+   "Multi-function pressure safety valve & thermostat",
+   "Magnesium anode rod prevents hard-water scaling"
+  ],
+  "w": [
+   "2 Years Comprehensive + 5–7 Years on Inner Tank",
+   "Covers heating element, thermostat and tank leakage"
+  ]
+ },
+ "wire": {
+  "short": "99.97% pure electrolytic copper FR house wire coil (90m) for safe home wiring.",
+  "d": "ISI-marked Flame Retardant (FR) PVC insulated multi-strand copper wire coil (90 metres). High conductivity lowers heat buildup inside concealed wall conduits, protecting your home.",
+  "f": [
+   "99.97% pure electrolytic grade bright copper",
+   "Flame Retardant (FR) high oxygen-index PVC",
+   "Factory-sealed 90m coil with ISI certification",
+   "Termite & moisture resistant outer sheath"
+  ],
+  "w": [
+   "Official Brand Authenticity Guarantee",
+   "100% genuine factory-sealed coil with GST invoice"
+  ]
+ },
+ "switch": {
+  "short": "Spark-shield polycarbonate modular switches & shuttered sockets (1,00,000+ clicks).",
+  "d": "Upgrade your walls with sleek, UV-stabilised fire-retardant polycarbonate modular switches and child-safe shuttered sockets. Silver-alloy contacts ensure zero spark and soft clicks.",
+  "f": [
+   "Fire-retardant UV-stabilised polycarbonate",
+   "Silver cadmium oxide contacts for zero spark",
+   "Child-safe safety shutters on all sockets",
+   "Fits standard modular GI/PVC gang boxes"
+  ],
+  "w": [
+   "Up to 10 Years Manufacturer Mechanism Warranty",
+   "Covers switch rocker mechanism and contact failure"
+  ]
+ },
+ "led": {
+  "short": "Glare-free Cool Daylight (6500K) LED lighting with 4kV voltage surge protection.",
+  "d": "Brighten bedrooms, study areas, and shops with instant, flicker-free 6500K cool daylight illumination. Saves up to 85% energy and withstands wide voltage fluctuations.",
+  "f": [
+   "High lumen output (100+ lm/W) Cool Daylight 6500K",
+   "In-built 4kV voltage surge protection",
+   "Zero mercury, UV-free eye-comfort diffuser",
+   "25,000+ hours rated operational life"
+  ],
+  "w": [
+   "1 Year Store Counter Replacement Warranty",
+   "Direct replacement against early driver/LED failure"
+  ]
+ }
+}

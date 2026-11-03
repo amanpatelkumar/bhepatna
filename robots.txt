@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Disallow: /manage-x7k2q9/

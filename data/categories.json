@@ -1,0 +1,44 @@
+[
+ {
+  "id": "all",
+  "label": "All Items",
+  "i": "all",
+  "grad": "from-slate-800 to-indigo-950"
+ },
+ {
+  "id": "fans",
+  "label": "Fans",
+  "i": "fan",
+  "grad": "from-sky-600 to-cyan-500"
+ },
+ {
+  "id": "coolers",
+  "label": "Air Coolers",
+  "i": "snow",
+  "grad": "from-teal-600 to-emerald-500"
+ },
+ {
+  "id": "mixer",
+  "label": "Mixers",
+  "i": "mixer",
+  "grad": "from-orange-600 to-amber-500"
+ },
+ {
+  "id": "induction",
+  "label": "Inductions",
+  "i": "pot",
+  "grad": "from-rose-600 to-pink-500"
+ },
+ {
+  "id": "iron",
+  "label": "Irons & Geysers",
+  "i": "zap",
+  "grad": "from-violet-600 to-purple-500"
+ },
+ {
+  "id": "elec",
+  "label": "Wires & LED",
+  "i": "plug",
+  "grad": "from-amber-600 to-yellow-500"
+ }
+]

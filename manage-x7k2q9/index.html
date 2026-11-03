@@ -1,0 +1,1174 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#1E3A8A"><title>Shop Admin – Bombay Hardware &amp; Electricals</title>
+<style>
+:root{--bg:#F4F6FA;--card:#fff;--ink:#111827;--mut:#6B7280;--line:#E5E7EB;--navy:#0F1F4B;--navy2:#1E3A8A;--blue:#2563EB;--blue2:#1D4ED8;--amb:#F59E0B}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+body{padding-bottom:96px}
+[hidden]{display:none!important}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+input:focus,select:focus,textarea:focus{outline:2px solid #93C5FD;outline-offset:0;border-color:#60A5FA!important}
+
+/* top bar */
+header{position:sticky;top:0;z-index:10;background:var(--navy);color:#fff;padding:14px 20px 14px;box-shadow:0 2px 10px #0F1F4B33}
+.topbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:17px;margin-right:auto;line-height:1.2}
+.brand small{display:block;font-weight:500;font-size:12px;opacity:.7;margin-top:2px}
+.actions{display:flex;gap:6px;flex-wrap:wrap}
+.ib{background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:8px;padding:8px 12px;font-weight:600;font-size:13px}
+.ib:hover{background:rgba(255,255,255,.22)}
+#bAdd{background:#fff;color:var(--navy)}
+#bAdd:hover{background:#E0E7FF}
+#q{width:100%;margin-top:12px;border:0;border-radius:10px;padding:10px 14px;background:#fff;color:var(--ink)}
+
+/* filters */
+.filters{background:#fff;border-bottom:1px solid var(--line);padding:4px 20px 8px}
+.frow{display:flex;align-items:center;gap:12px}
+.flabel{width:62px;flex:none;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--mut)}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:6px 0;flex:1;scrollbar-width:none;min-width:0}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;font-size:13px;color:#374151;white-space:nowrap}
+.chip:hover{border-color:#9CA3AF}
+.chip.on{background:var(--navy2);border-color:var(--navy2);color:#fff}
+.chip.warn.on{background:#B91C1C;border-color:#B91C1C}
+
+/* main */
+.wrap{max-width:1180px;margin:0 auto;padding:16px 20px}
+.tools{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:2px 0 12px}
+#count{color:var(--mut);font-weight:600}
+#sort{width:auto;padding:7px 10px;border:1px solid #D1D5DB;border-radius:8px;background:#fff;color:var(--ink)}
+#msg{margin-bottom:6px}
+#bulk{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;padding:10px 12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+#bulk b{font-size:13px;color:#1E3A8A;margin-right:4px}
+#bulk input,#bulk select{width:auto;padding:7px 9px;font-size:13px;border:1px solid #CBD5E1;border-radius:8px;background:#fff}
+#bPct{width:80px}
+
+/* product cards */
+#list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:12px;box-shadow:0 1px 2px #0000000d;transition:border-color .15s,box-shadow .15s}
+.item:hover{border-color:#C7D2FE;box-shadow:0 4px 14px #1E3A8A14}
+.item.chg{border-color:var(--amb);box-shadow:0 0 0 3px #FDE68A66}
+.item.hid{background:#F9FAFB;opacity:.72}
+.itop{display:flex;align-items:flex-start;gap:10px}
+.thumb{width:60px;height:60px;border-radius:10px;overflow:hidden;flex:none;background:#EEF2FF;color:#3730A3;display:grid;place-items:center;font-weight:800;font-size:13px;border:1px solid #E0E7FF}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb.sq{width:56px;height:56px;margin:0;aspect-ratio:1;border-radius:10px;background:linear-gradient(135deg,#E0E7FF,#C7D2FE);font-size:14px;letter-spacing:1px;border:0;flex:none}
+.mid{display:flex;gap:12px;align-items:flex-start}
+.right{flex:1;min-width:0;display:grid;gap:8px;align-content:start}
+.itop{display:flex}
+.itop .pos{order:1}.itop .n{order:2}.itop .pr{order:3}.itop .sel{order:4;margin:2px 0 0 6px}
+.right .ibot{flex-direction:row;flex-wrap:wrap;align-items:center;border-top:0;padding-top:0}
+.right .ibot .iss{display:inline-block;margin:0;width:auto}
+.mid .mv{margin-left:0}
+.item{padding:0 14px 14px!important}
+.sel{margin-top:3px;width:17px;height:17px;flex:none;accent-color:var(--blue)}
+.pos{flex:none;background:#EEF2FF;color:#3730A3;border-radius:6px;padding:2px 7px;font-size:12px;font-weight:700}
+.n{flex:1;min-width:0;cursor:pointer}
+.n b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:14px;font-weight:700;line-height:1.3}
+.n small{display:block;color:var(--mut);margin-top:3px;font-size:12px}
+.iss{display:block;margin-top:6px;font-size:11px;color:#92400E;font-weight:600;background:#FEF3C7;border-radius:6px;padding:2px 6px;width:fit-content}
+.pr{text-align:right;font-weight:800;white-space:nowrap;font-size:15px;cursor:pointer}
+.pr s{display:block;font-size:12px;color:var(--mut);font-weight:500}
+.ibot{display:flex;gap:6px;flex-wrap:wrap;align-items:center;border-top:1px solid #F1F5F9;padding-top:10px}
+.pill{border:0;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:700}
+.in_stock{background:#D1FAE5;color:#065F46}
+.on_order{background:#FEF3C7;color:#92400E}
+.out_of_stock{background:#FEE2E2;color:#991B1B}
+.hidebtn{background:#E5E7EB;color:#374151}
+.showbtn{background:#DBEAFE;color:#1E40AF}
+.mv{margin-left:auto;display:flex;gap:4px}
+.mv button{border:1px solid #D1D5DB;background:#fff;border-radius:6px;font-size:11px;padding:3px 8px;color:#374151}
+.mv button:hover{border-color:var(--blue);color:var(--blue)}
+li.empty{display:block;text-align:center;padding:36px;border:1px dashed #CBD5E1;background:#fff;color:var(--mut);border-radius:14px;grid-column:1/-1}
+
+/* buttons */
+.btn{background:#fff;border:1px solid #D1D5DB;border-radius:8px;padding:8px 13px;font-weight:600;color:var(--ink)}
+.btn:hover{border-color:#9CA3AF}
+.pri{background:var(--blue);color:#fff;border:0;border-radius:8px;padding:9px 18px;font-weight:700}
+.pri:hover{background:var(--blue2)}
+.pri:disabled{opacity:.5;cursor:default}
+.dng{color:#B91C1C}
+.btn.dng{border-color:#FCA5A5}
+
+/* publish bar */
+#bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:12px 20px;display:flex;gap:10px;align-items:center;box-shadow:0 -6px 20px #0F1F4B1A;z-index:9}
+#bar span{margin-right:auto;font-weight:600;color:#92400E}
+
+/* notes */
+.note{border-radius:10px;padding:10px 14px;font-size:13px;border:1px solid;margin:8px 0}
+.er{background:#FEF2F2;border-color:#FCA5A5;color:#7F1D1D}
+.ok{background:#ECFDF5;border-color:#6EE7B7;color:#065F46}
+.in{background:#EFF6FF;border-color:#93C5FD;color:#1E3A8A}
+.mut{color:var(--mut);font-size:13px}
+
+/* login & setup */
+#auth{min-height:100vh;display:flex;align-items:flex-start}
+#auth .wrap{width:100%;padding-top:48px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 12px 32px #0F1F4B14;max-width:460px;margin:0 auto}
+.card h2{margin:0 0 6px;font-size:20px}
+.fields{display:grid;gap:14px}
+.pwwrap{position:relative}.pwwrap input{padding-right:64px}
+.eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:#F1F5F9;color:#334155;border-radius:6px;font-size:12px;font-weight:700;padding:5px 9px}
+.eye:hover{background:#E2E8F0}
+.linkbtn{background:none;border:0;color:#2563EB;font-weight:600;padding:4px 6px;font-size:14px}
+.linkbtn:hover{text-decoration:underline}
+
+/* forms */
+label{display:grid;gap:6px;font-size:12px;font-weight:600;color:#374151}
+input,select,textarea{border:1px solid #D1D5DB;border-radius:8px;padding:9px 11px;font-size:14px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:76px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sec{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--mut);font-weight:700;border-bottom:1px solid var(--line);padding-bottom:5px;margin-top:6px}
+.cb{display:flex;align-items:center;justify-content:space-between;font-size:14px;color:var(--ink);font-weight:600;gap:12px}
+.cb input{width:18px;height:18px;accent-color:var(--blue)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg button{border:1px solid #D1D5DB;background:#fff;border-radius:8px;padding:9px 4px;font-weight:600;font-size:13px;color:#374151}
+.seg button.on{border-color:var(--blue);background:#EFF6FF;color:#1D4ED8}
+.adj{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.adj button{border:1px solid #D1D5DB;background:#fff;border-radius:8px;padding:7px 0;font-weight:600;font-size:12px;color:#374151}
+.warn2{color:#B91C1C;font-size:12px;font-weight:700}
+
+/* photos */
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:6px}
+.slot{display:grid;gap:6px;text-align:center}
+.slot .ph{aspect-ratio:1;border:1px dashed #CBD5E1;border-radius:10px;background:#F8FAFC;display:grid;place-items:center;overflow:hidden;color:var(--mut);font-size:11px;padding:4px}
+.slot .ph img{width:100%;height:100%;object-fit:cover}
+.slot input{font-size:11px;padding:4px;border:1px solid #E5E7EB}
+
+/* dialogs */
+dialog{border:0;border-radius:16px;padding:0;width:min(620px,96vw);max-height:92vh;box-shadow:0 25px 60px #0F1F4B40}
+dialog[open]{display:flex;flex-direction:column}
+dialog::backdrop{background:#111827A6}
+.dh{padding:18px 22px 6px;font-size:17px;font-weight:800}
+.db{padding:12px 22px 8px;display:grid;gap:14px;overflow:auto}
+.df{padding:14px 22px;border-top:1px solid var(--line);display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;background:#FAFAFB;border-radius:0 0 16px 16px}
+.warn2{margin-top:-6px}
+#dBrands .db,#dHist .db{gap:10px}
+#brandList,#histList{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+#brandList li,#histList li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:center;justify-content:space-between}
+#brandList .n,#histList .n{cursor:default}
+#brandList .n b,#histList .n b{font-size:14px}
+/* admin sections */
+.tabs{display:flex;gap:4px;padding:0 20px;background:var(--navy);border-top:1px solid #ffffff22}
+.tab{background:none;border:0;color:#CBD5E1;padding:10px 14px;font-weight:700;border-bottom:3px solid transparent}
+.tab.on{color:#fff;border-bottom-color:#fff}
+.newbanner{position:sticky;top:0;z-index:9;background:#B91C1C;color:#fff;padding:10px 20px;font-weight:700;cursor:pointer}
+.ohead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:6px 0 10px}
+/* additions */
+.kbd{color:#CBD5E1;font-size:11px;align-self:center;margin-left:auto}
+.lockmsg{background:#FEF2F2;border:1px solid #FCA5A5;color:#7F1D1D;border-radius:10px;padding:10px 12px;font-size:13px;margin-top:10px}
+#printArea{display:none}
+@page{size:A4;margin:10mm}
+.inv{width:190mm;font:10px/1.35 Arial,Helvetica,sans-serif;color:#000}
+.inv .g{width:100%;border-collapse:collapse;margin-bottom:-1px}
+.inv .g td,.inv .g th{border:1px solid #000;padding:4px 6px;vertical-align:top}
+.inv .c{text-align:center}.inv .r{text-align:right}.inv .b{font-weight:700}
+.inv .items th{background:#F1F5F9;font-weight:700}
+.inv .items td{height:20px}
+.inv .tot td{font-weight:700}
+.inv .foot{text-align:center;color:#1D4ED8;margin:6px 0 0}
+@media print{body *{visibility:hidden}#printArea,#printArea *{visibility:visible}#printArea{display:block!important;position:absolute;left:0;top:0;width:190mm}}
+.ocall{font-size:12px;font-weight:700;color:#1D4ED8;text-decoration:none;border:1px solid #BFDBFE;border-radius:8px;padding:4px 8px}
+.pay{width:auto}
+/* customer orders */
+.olist{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ocard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:8px}
+.oh{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.oi{font-size:13px;color:#374151;line-height:1.5}
+.oF{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.oF select{width:auto}
+.flagbad{display:inline-block;background:#FEE2E2;color:#991B1B;border-radius:6px;padding:2px 8px;font-size:12px;font-weight:700;margin-top:4px}
+.mbtn{border:1px solid #D1D5DB;background:#fff;border-radius:8px;padding:6px 10px;font-weight:600;font-size:12px}
+</style></head><body>
+
+<section id="auth" hidden><div class="wrap" style="padding-top:36px">
+  <div class="card" id="loginBox" hidden>
+    <h2 style="margin:0 0 4px">🔐 Shop Admin</h2>
+    <p class="mut" style="margin:0 0 14px">Enter the admin password to continue.</p>
+    <form id="fLogin" class="fields"><label>Password<input id="lPw" type="password" autocomplete="current-password" required></label><button class="pri" type="submit">Unlock</button></form>
+    <p style="text-align:center;margin:12px 0 0"><button type="button" class="linkbtn" id="lForgot">Forgot password?</button></p>
+    <div id="lErr"></div>
+  </div>
+  <div class="card" id="setupBox" hidden>
+    <h2 style="margin:0 0 4px">First-time setup</h2>
+    <p class="mut" style="margin:0 0 14px">This stores your GitHub access token inside the website, encrypted with your password. Only someone with the password can use it. Do this once, right after publishing.</p>
+    <form id="fSetup" class="fields">
+      <label>GitHub repository (owner/name)<input id="sRepo" placeholder="amanpatelkumar/bhepatna" required autocapitalize="off"></label>
+      <label>Branch<input id="sBranch" value="main" autocapitalize="off"></label>
+      <label>GitHub access token<input id="sTok" type="password" autocomplete="off" required></label>
+      <label>New admin password (at least 12 characters)<input id="sPw" type="password" autocomplete="new-password" minlength="12" required></label>
+      <label>Repeat password<input id="sPw2" type="password" autocomplete="new-password" minlength="12" required></label>
+      <button class="pri" type="submit">Create secure admin</button>
+    </form>
+    <div id="sErr"></div>
+  </div>
+  <div class="card" id="forgotBox" hidden>
+    <h2>Reset password</h2>
+    <p class="mut" style="margin:0 0 12px">We email a 6-digit code to the admin address. Then choose a new password and enter a GitHub token. The old token can't be read without the old password, so a new one is needed.</p>
+    <div id="fgStep1"><button class="pri" type="button" id="fgSend" style="width:100%">Send code to admin email</button></div>
+    <div id="fgStep2" hidden class="fields"><label>6-digit code from the email<input id="fgCode" inputmode="numeric" maxlength="6" autocomplete="one-time-code"></label><button class="pri" type="button" id="fgCheck">Check code</button></div>
+    <div id="fgStep3" hidden class="fields">
+      <label>GitHub repository (owner/name)<input id="fgRepo" autocapitalize="off" placeholder="amanpatelkumar/bhepatna"></label>
+      <label>Branch<input id="fgBranch" value="main" autocapitalize="off"></label>
+      <label>New GitHub access token<input id="fgTok" type="password" autocomplete="off"></label>
+      <label>New password (at least 12 characters)<input id="fgPw" type="password" autocomplete="new-password"></label>
+      <label>Repeat new password<input id="fgPw2" type="password" autocomplete="new-password"></label>
+      <button class="pri" type="button" id="fgReset">Set new password</button>
+    </div>
+    <div id="fgMsg"></div>
+    <p style="text-align:center;margin:14px 0 0"><button type="button" class="linkbtn" id="fgBack">Back to login</button></p>
+  </div>
+</div></section>
+
+<section id="app" hidden>
+  <header><div class="topbar"><div class="brand">Shop Admin<small>Bombay Hardware &amp; Electricals</small></div><div class="actions">
+    <button class="ib" id="bAdd">+ Add</button><button class="ib" id="bExp">Export CSV</button><button class="ib" id="bImp">Import CSV</button><button class="ib" id="bHist">History</button><button class="ib" id="bBrands">Brands</button><button class="ib" id="bSet" title="Shop settings">⚙ Settings</button></div></div>
+    <input id="q" type="search" placeholder="Search name, brand, size…" style="margin-top:8px" autocomplete="off"></header>
+  <nav class="tabs" aria-label="Admin sections"><span class="kbd">/ search · o orders · p products · n add</span><button type="button" class="tab on" id="tabOrders" data-view="orders">Orders</button><button type="button" class="tab" id="tabProducts" data-view="products">Products</button></nav>
+  <div id="newBanner" class="newbanner" role="button" hidden></div>
+  <div id="viewOrders" class="wrap">
+    <div class="ohead"><h2 style="margin:0;font-size:18px">Customer orders</h2><button type="button" class="btn" id="bNotify">Turn on order alerts</button></div>
+    <div class="tools"><input id="oQ" type="search" placeholder="Search name, phone or order ID" style="flex:1;min-width:160px"><select id="oFlag"><option value="">All orders</option><option value="flag">Flagged by checks</option><option value="mark">Marked irrelevant</option></select><select id="oStatus"><option value="">All statuses</option><option>New</option><option>Confirmed</option><option>Packed</option><option>Delivered</option><option>Cancelled</option></select><button type="button" class="btn" id="oRef">Refresh</button><button type="button" class="btn" id="oExp">Export CSV</button></div>
+    <div id="oMsg"></div>
+    <ul id="oList" class="olist"></ul>
+<div id="printArea" hidden></div>
+  </div>
+  <div id="viewProducts" hidden>
+  <div class="filters"><div class="frow"><span class="flabel">Category</span><div class="chips" id="cats"></div></div><div class="frow"><span class="flabel">Brand</span><div class="chips" id="brs"></div></div><div class="frow"><span class="flabel">Stock</span><div class="chips" id="sts"></div></div></div>
+  <div class="wrap">
+    <div id="msg"></div>
+    <div class="tools"><b id="count" class="mut"></b>
+      <select id="sort"><option value="pos">Sort: Position</option><option value="plh">Price low → high</option><option value="phl">Price high → low</option><option value="name">Name A–Z</option><option value="stock">Stock</option></select></div>
+    <div id="bulk" hidden>
+      <b id="selCnt" style="font-size:13px"></b>
+      <input id="bPct" type="number" step="0.5" placeholder="%" style="width:80px"><select id="bRound"><option value="0">Exact price</option><option value="5">Round to ₹5</option><option value="10">Round to ₹10</option></select><button class="btn" id="bPctGo">Change price %</button>
+      <select id="bStock"><option value="">Set stock…</option><option value="in_stock">In stock</option><option value="on_order">On order</option><option value="out_of_stock">Out of stock</option></select>
+      <button class="btn" id="bShow">Show on site</button><button class="btn" id="bHide">Hide from site</button><button class="btn" id="bFeatOn">Feature on</button><button class="btn" id="bFeatOff">Feature off</button>
+      <button class="btn" id="bSelAll">Select all shown</button><button class="btn dng" id="bDel">Delete selected</button><button class="btn" id="bSelClr">Clear</button>
+    </div>
+    <ul id="list"></ul>
+  </div>
+  <div id="bar" hidden><span id="cnt"></span><button class="btn" id="bDisc">Discard</button><button class="pri" id="bPub">Publish</button></div>
+  </div>
+</section>
+
+<input id="csvIn" type="file" accept=".csv,text/csv" hidden>
+
+<dialog id="dEdit"><form id="fEdit" method="dialog" style="display:flex;flex-direction:column;min-height:0">
+  <div class="dh" id="eTitle"></div>
+  <div class="db">
+    <label>Product name<input id="e_name" maxlength="90" required></label>
+    <div class="two"><label>Brand<select id="e_brand"></select></label><label>Category<select id="e_group"></select></label></div>
+    <div id="newBrandBox" hidden><label>New brand name (letters, numbers, hyphen)<input id="e_newbrand" maxlength="30" placeholder="e.g. Orpat"></label></div>
+    <div class="two"><label>Size / model<input id="e_s1" maxlength="30" required></label><label>Key feature<input id="e_s2" maxlength="30" required></label></div>
+    <div class="sec">Pricing</div>
+    <div class="two"><label>Selling price ₹<input id="e_price" type="number" inputmode="numeric" min="1" required></label><label>MRP ₹<input id="e_mrp" type="number" inputmode="numeric" min="1" required></label></div>
+    <div class="adj"><button type="button" data-adj="-100">−100</button><button type="button" data-adj="-10">−10</button><button type="button" data-adj="10">+10</button><button type="button" data-adj="100">+100</button></div>
+    <div class="warn2" id="e_warn" hidden>Selling price is higher than MRP.</div>
+    <div class="sec">Stock &amp; visibility</div>
+    <div class="seg" id="e_stock"><button type="button" data-s="in_stock">In stock</button><button type="button" data-s="on_order">On order</button><button type="button" data-s="out_of_stock">Out of stock</button></div>
+    <div class="two"><label>Display position (1 = shown first in its category)<input id="e_pos" type="number" min="1" step="1"></label><label>Badge<input id="e_badge" maxlength="14" placeholder="POPULAR"></label></div>
+    <label class="cb">Show on website<input id="e_vis" type="checkbox" checked></label>
+    <label class="cb">Show in Featured (home page)<input id="e_feat" type="checkbox"></label>
+    <label class="cb">Show in New Arrivals<input id="e_new" type="checkbox"></label>
+    <label>Description<textarea id="e_desc" maxlength="400"></textarea></label>
+    <div><div class="sec">Photos (first one is the main photo)</div><div class="slots" id="photoBox" style="margin-top:6px"></div></div>
+    <div class="note er" id="eErr" hidden></div>
+  </div>
+  <div class="df"><button type="button" class="btn" id="eDup">Duplicate</button><button type="button" class="btn" id="eRevert">Revert changes</button><button type="button" class="btn dng" id="eDel">Delete</button><button type="button" class="btn" id="eCancel">Cancel</button><button class="pri" type="submit">Apply</button></div>
+</form></dialog>
+
+<dialog id="dSet"><form id="fSet" method="dialog" style="display:flex;flex-direction:column;min-height:0">
+  <div class="dh">Shop settings</div>
+  <div class="db">
+    <label>Website address (for Google)<input id="s_url" placeholder="https://www.yourshop.com"></label>
+    <label>WhatsApp number (digits with country code)<input id="s_wa" placeholder="919876543210"></label>
+    <label>Shop phone<input id="s_ph" placeholder="+91 98765 43210"></label>
+    <label>Opening hours (shown in the footer)<input id="s_hr" placeholder="Open Daily: 9:30 AM – 9:00 PM"></label>
+    <div class="sec">Orders</div>
+    <label>Orders web address (from the Google Apps Script deployment)<input id="s_ourl" placeholder="https://script.google.com/macros/s/.../exec"></label>
+    <label>Orders key (keeps the order list private)<input id="s_okey" type="password" autocomplete="off"></label>
+    <label>Admin password (only needed to save a new orders key)<input id="s_okpw" type="password" autocomplete="current-password"></label>
+    <div class="sec">Shop logo</div>
+    <div id="logoNow" class="mut"></div>
+    <input id="s_logo" type="file" accept="image/png,image/jpeg,image/webp">
+    <div class="sec">Promo banner (home page)</div>
+    <label class="cb">Show the banner<input id="s_bon" type="checkbox"></label>
+    <label>Banner title<input id="s_bt" maxlength="60" placeholder="Summer fan sale"></label>
+    <label>Banner text<input id="s_btx" maxlength="140" placeholder="Up to 20% off on selected fans"></label>
+    <div class="two"><label>Button link<input id="s_bl" placeholder="products.html or https://…"></label><label>Button text<input id="s_bll" maxlength="24" placeholder="Shop now"></label></div>
+    <div class="sec">Google reviews</div>
+    <div class="two"><label>Google rating (e.g. 4.5)<input id="s_grate" maxlength="4"></label><label>Google reviews link<input id="s_gurl" placeholder="https://g.page/…"></label></div>
+    <div class="sec">Invoice details</div>
+    <label>Shop email<input id="s_email" placeholder="shop@example.com"></label>
+    <label>Shop GSTIN<input id="s_gstin" placeholder="10ABCDE1234F1Z5"></label>
+    <label>State<input id="s_state" placeholder="Bihar"></label>
+    <label>GST rate % (prices include GST)<input id="s_gst" type="number" placeholder="18"></label>
+    <label>HSN / SAC code for items<input id="s_hsn" placeholder="8536"></label>
+    <button type="button" class="btn" id="bBackup">Download backup (products and settings)</button>
+    <button type="button" class="btn" id="bPw">Change admin password</button>
+    <button type="button" class="btn" id="bLogout">Lock admin</button>
+  </div>
+  <div class="df"><button type="button" class="btn" id="sCancel">Cancel</button><button class="pri" type="submit">Apply</button></div>
+</form></dialog>
+
+<dialog id="dPw"><form id="fPw" method="dialog" style="display:flex;flex-direction:column;min-height:0">
+  <div class="dh">Change admin password</div>
+  <div class="db">
+    <label>New password (at least 12 characters)<input id="p_1" type="password" autocomplete="new-password" minlength="12" required></label>
+    <label>Repeat new password<input id="p_2" type="password" autocomplete="new-password" minlength="12" required></label>
+    <div class="note er" id="pErr" hidden></div>
+  </div>
+  <div class="df"><button type="button" class="btn" id="pCancel">Cancel</button><button class="pri" type="submit">Change password</button></div>
+</form></dialog>
+
+<input id="brandLogoIn" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+<dialog id="dBrands"><div style="display:flex;flex-direction:column;min-height:0"><div class="dh">Brands on the website</div><div class="db"><p class="mut" style="margin:0">Hide a brand to take all its products off the website. Nothing is deleted, and you can show the brand again at any time.</p><ul id="brandList"></ul></div><div class="df"><button type="button" class="btn" id="brClose">Close</button></div></div></dialog>
+<dialog id="dHist"><div style="display:flex;flex-direction:column;min-height:0">
+  <div class="dh">History of product changes</div>
+  <div class="db"><p class="mut" style="margin:0">Each publish is saved. Restore an older version to undo changes; the restore is itself saved and can be undone too. Photos and pages are not rolled back.</p><ul id="histList"></ul></div>
+  <div class="df"><button type="button" class="btn" id="hClose">Close</button></div></div></dialog>
+
+<script>
+const API = "https://api.github.com", ITER = 600000, KEYS = ["id","slug","pos","cat","t","brand","name","specs","price","mrp","badge","desc","stock","group","featured","isNew","hidden"];
+const enc = new TextEncoder(), dec = new TextDecoder(), $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const cap = b => b ? b[0] + b.slice(1).toLowerCase() : "", inr = n => "₹" + Number(n).toLocaleString("en-IN");
+const clone = o => JSON.parse(JSON.stringify(o)), pk = p => JSON.stringify(KEYS.map(k => p[k]));
+const slugify = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 90);
+const SL = { in_stock: "In stock", on_order: "On order", out_of_stock: "Out of stock" }, SHOP = "Bombay Hardware & Electricals";
+const b64e = u8 => { let s = ""; for (let i = 0; i < u8.length; i += 0x8000) s += String.fromCharCode.apply(null, u8.subarray(i, i + 0x8000)); return btoa(s) };
+const b64d = s => Uint8Array.from(atob(s.replace(/\s/g, "")), c => c.charCodeAt(0));
+const offPct = p => Math.round((1 - p.price / p.mrp) * 100);
+let CFG = null, SEC = [], DET = {}, CATS = [], SITE = {}, SITE_NEW = null, SHELL = "", BRAND_SHELL = "", FILES = new Map(), IMG = {}, BASE = [], P = [], PHOTO = {}, SEL = new Set();
+let VIEW = "orders";
+let cur = null, ESTOCK = "in_stock", SHOWN = [], fc = "", fb = "", fs = "", fq = "", fa = false, SORT = "pos";
+let BRANDS_HIDDEN = [], BRANDS_HIDDEN_BASE = [];
+let fnp = false;
+let LOGO_PATH = "", BRAND_LOGOS_MAP = {};
+try { const v = JSON.parse(localStorage.getItem("bha_admin_view") || "null"); if (v) { fc = v.fc || ""; fb = v.fb || ""; fs = v.fs || ""; fa = !!v.fa; SORT = v.SORT || "pos"; fnp = !!v.fnp; } } catch (e) {}
+function saveView() { try { localStorage.setItem("bha_admin_view", JSON.stringify({ fc, fb, fs, fa, SORT, fnp })); } catch (e) {} }
+
+/* ---------- encryption: the GitHub token is sealed with your password ---------- */
+async function keyFrom(pw, salt, iter) {
+  const base = await crypto.subtle.importKey("raw", enc.encode(pw), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey({ name: "PBKDF2", salt, iterations: iter, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
+}
+async function seal(obj, pw) {
+  const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, await keyFrom(pw, salt, ITER), enc.encode(JSON.stringify(obj))));
+  return JSON.stringify({ v: 1, kdf: "PBKDF2-SHA256", iter: ITER, salt: b64e(salt), iv: b64e(iv), ct: b64e(ct) }, null, 1) + "\n";
+}
+async function open(text, pw) {
+  const v = JSON.parse(text);
+  try { const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64d(v.iv) }, await keyFrom(pw, b64d(v.salt), v.iter), b64d(v.ct)); return JSON.parse(dec.decode(pt)) }
+  catch (e) { throw new Error("WRONG_PASSWORD") }
+}
+
+/* ---------- GitHub ---------- */
+async function gh(path, opt = {}) {
+  const r = await fetch(API + path, { ...opt, cache: "no-store", headers: { Accept: "application/vnd.github+json", Authorization: "Bearer " + CFG.token, "X-GitHub-Api-Version": "2022-11-28", ...(opt.body ? { "Content-Type": "application/json" } : {}) } }).catch(() => { throw new Error("No internet connection") });
+  if (!r.ok) {
+    let m = ""; try { m = (await r.json()).message || "" } catch (e) {}
+    const e = new Error(r.status === 401 ? "GitHub token rejected – create a new token and run setup again" : r.status === 403 ? "GitHub token cannot write – it needs Contents: Read and write" : r.status === 404 ? "Repository, branch or file not found" : r.status === 409 || r.status === 422 ? "CONFLICT" : "GitHub error " + r.status + (m ? ": " + m : ""));
+    e.status = r.status; throw e;
+  }
+  return r.status === 204 ? null : r.json();
+}
+const readFile = async (path, ref) => dec.decode(b64d((await gh(`/repos/${CFG.repo}/contents/${path}?ref=${encodeURIComponent(ref || CFG.branch)}`)).content));
+async function loadTree() {
+  const t = await gh(`/repos/${CFG.repo}/git/trees/${encodeURIComponent(CFG.branch)}?recursive=1`);
+  FILES = new Map(t.tree.filter(x => x.type === "blob").map(x => [x.path, x.sha]));
+  LOGO_PATH = [...FILES.keys()].find(f => /^assets\/img\/logo\.(png|jpe?g|webp)$/.test(f)) || "";
+  BRAND_LOGOS_MAP = {}; for (const f of FILES.keys()) { const m = f.match(/^assets\/img\/brands\/([a-z0-9-]+)\.(png|jpe?g|webp)$/); if (m) BRAND_LOGOS_MAP[m[1]] = f; }
+  IMG = {};
+  for (const path of FILES.keys()) {
+    const m = path.match(/^assets\/img\/products\/([a-z0-9-]+?)(?:-([2-4]))?\.(webp|jpe?g|png)$/); if (!m) continue;
+    const slot = m[2] ? +m[2] - 1 : 0; (IMG[m[1]] = IMG[m[1]] || [null, null, null, null]);
+    if (!IMG[m[1]][slot]) IMG[m[1]][slot] = { path, ext: m[3] };
+  }
+}
+async function loadAll() {
+  await loadTree();
+  const [p, s, d, c, si, sh, bs] = await Promise.all(["data/products.json", "data/sections.json", "data/details.json", "data/categories.json", "data/site.json", "manage-x7k2q9/shell.html", "manage-x7k2q9/brand-shell.html"].map(x => readFile(x)));
+  P = JSON.parse(p).sort((a, b) => a.pos - b.pos || a.id - b.id); P.forEach(p => p.hidden = !!p.hidden); BASE = clone(P);
+  SEC = JSON.parse(s); DET = JSON.parse(d); CATS = JSON.parse(c); SITE = JSON.parse(si); SHELL = sh; BRAND_SHELL = bs;
+  PHOTO = {}; SITE_NEW = null; SEL = new Set();
+  BRANDS_HIDDEN = await readFile("data/brands.json").then(JSON.parse).catch(() => []); BRANDS_HIDDEN_BASE = clone(BRANDS_HIDDEN);
+}
+/* one atomic commit with any number of files, deletions included */
+async function commit(entries, message) {
+  const head = (await gh(`/repos/${CFG.repo}/git/ref/heads/${encodeURIComponent(CFG.branch)}`)).object.sha;
+  const base = (await gh(`/repos/${CFG.repo}/git/commits/${head}`)).tree.sha, tree = [];
+  for (const e of entries) {
+    if (e.del) tree.push({ path: e.path, mode: "100644", type: "blob", sha: null });
+    else if (e.text !== undefined) tree.push({ path: e.path, mode: "100644", type: "blob", content: e.text });
+    else { const b = await gh(`/repos/${CFG.repo}/git/blobs`, { method: "POST", body: JSON.stringify({ content: e.b64, encoding: "base64" }) }); tree.push({ path: e.path, mode: "100644", type: "blob", sha: b.sha }); }
+  }
+  const nt = await gh(`/repos/${CFG.repo}/git/trees`, { method: "POST", body: JSON.stringify({ base_tree: base, tree }) });
+  const nc = await gh(`/repos/${CFG.repo}/git/commits`, { method: "POST", body: JSON.stringify({ message, tree: nt.sha, parents: [head] }) });
+  await gh(`/repos/${CFG.repo}/git/refs/heads/${encodeURIComponent(CFG.branch)}`, { method: "PATCH", body: JSON.stringify({ sha: nc.sha }) });
+}
+
+/* ---------- generated files (same shape as build.mjs) ---------- */
+const fileFor = (slug, slot, ext) => `assets/img/products/${slug}${slot > 0 ? "-" + (slot + 1) : ""}.${ext}`;
+function dataJs(list, slots, site) {
+  const products = list.map(p => {
+    const arr = (slots[p.slug] || []).filter(Boolean), o = { ...p };
+    if (arr.length) { o.img = arr[0].path; o.imgs = arr.map(x => x.path); }
+    return o;
+  });
+  return "// AUTO-GENERATED by the admin page - edit products through the admin\nwindow.BHE = " + JSON.stringify({ products, categories: CATS, details: DET, sections: SEC, hiddenBrands: BRANDS_HIDDEN, site: { whatsapp: site.whatsapp || "", phone: site.phone || "", url: site.url || "", ordersUrl: site.ordersUrl || "", logo: LOGO_PATH, brandLogos: BRAND_LOGOS_MAP, banner: site.banner || null, googleRating: site.googleRating || "", googleReviewUrl: site.googleReviewUrl || "", hours: site.hours || "", opens: site.opens || "09:30", closes: site.closes || "21:00" } }) + ";\n";
+}
+function uniqSlug(s, list) {
+  let c = s, i = 2;
+  while (list.some(x => x.slug === c) || FILES.has(`product/${c}.html`)) c = `${s}-${i++}`;
+  return c;
+}
+function productPage(q) {
+  const title = `${cap(q.brand)} ${q.name} ${q.specs[0]} – ${inr(q.price)} | ${SHOP}, Patna`, desc = `${q.desc} ${inr(q.price)} (MRP ${inr(q.mrp)}). Order on WhatsApp.`;
+  let h = SHELL.split("__SLUG__").join(q.slug).split('"id":"__PID__"').join(`"id":${q.id}`).split("__NAME__").join(esc(q.name)).split("__BRAND__").join(esc(cap(q.brand)));
+  h = h.replace(/<title>[\s\S]*?<\/title>/, () => `<title>${esc(title)}</title>`).replace(/<meta name="description" content="[^"]*"/, () => `<meta name="description" content="${esc(desc)}"`);
+  return h;
+}
+function brandPage(up) {
+  const slug = up.toLowerCase(), c = cap(up);
+  let h = BRAND_SHELL.split("__BRANDUP__").join(up).split("__CAP__").join(c).split("__SLUG__").join(slug).split("__BRAND__").join(up);
+  h = h.replace(/<title>[\s\S]*?<\/title>/, () => `<title>${esc(c)} Products in Patna – ${esc(SHOP)}</title>`);
+  return h;
+}
+/* photos: PHOTO[slug][slot] = {ext,b64} | {remove:true} | null. Returns the files to write/delete and the slots after the change */
+function photoPlan(removed) {
+  const ent = [], slots = {};
+  const slugs = new Set([...P.map(p => p.slug), ...removed]);
+  for (const slug of slugs) {
+    const old = IMG[slug] || [null, null, null, null], ops = PHOTO[slug] || [null, null, null, null], res = [null, null, null, null];
+    for (let s = 0; s < 4; s++) {
+      const o = old[s], op = ops[s];
+      if (removed.has(slug) || (op && op.remove)) { if (o) ent.push({ path: o.path, del: true }); continue }
+      if (op && op.ext) {
+        const path = fileFor(slug, s, op.ext);
+        for (const e of ["webp", "jpg", "jpeg", "png"]) { const f = fileFor(slug, s, e); if (f !== path && FILES.has(f)) ent.push({ path: f, del: true }) }
+        ent.push({ path, b64: op.b64 }); res[s] = { path, ext: op.ext };
+      } else res[s] = o;
+    }
+    if (!removed.has(slug)) slots[slug] = res;
+  }
+  return { ent, slots };
+}
+const brandsNow = list => [...new Set(list.map(p => p.brand))].sort();
+
+/* ---------- validation, changes, health ---------- */
+function validate(list) {
+  for (const p of list) {
+    const n = p.name || "(unnamed)";
+    if (!p.name || !p.brand || !p.specs[0] || !p.specs[1] || !p.desc) return `"${n}": name, brand, size/model, key feature and description are required`;
+    if (!(p.price > 0) || !(p.mrp >= p.price)) return `"${n}": price must be above 0 and not higher than MRP`;
+    if (/[<>]/.test(JSON.stringify(p))) return `"${n}": remove < and > characters`;
+  }
+  return null;
+}
+function counts() {
+  const bm = new Map(BASE.map(p => [p.id, p])), pm = new Map(P.map(p => [p.id, p]));
+  const changed = P.filter(p => bm.has(p.id) && pk(p) !== pk(bm.get(p.id))).length;
+  const added = P.filter(p => !bm.has(p.id)).length, removed = BASE.filter(p => !pm.has(p.id)).length, photos = Object.keys(PHOTO).length;
+  const site = SITE_NEW ? 1 : 0;
+  const brands = JSON.stringify([...BRANDS_HIDDEN].sort()) !== JSON.stringify([...BRANDS_HIDDEN_BASE].sort()) ? 1 : 0;
+  return { changed, added, removed, photos, site, brands, total: changed + added + removed + photos + site + brands };
+}
+const isDirty = p => { const b = BASE.find(x => x.id === p.id); return !b || pk(p) !== pk(b) };
+function normalizePos() { P.sort((a, b) => a.pos - b.pos || a.id - b.id); P.forEach((p, i) => p.pos = i + 1) }
+function issues(p) {
+  const out = [], slots = IMG[p.slug] || [], pend = PHOTO[p.slug] || [];
+  const hasPhoto = (slots[0] && !(pend[0] && pend[0].remove)) || (pend[0] && pend[0].ext);
+  if (!hasPhoto) out.push("no photo");
+  if ((p.desc || "").length < 20) out.push("short description");
+  if (p.stock === "out_of_stock" && p.featured) out.push("featured but out of stock");
+  if (!FILES.has(`product/${p.slug}.html`)) out.push("no product page");
+  if (P.some(q => q.id !== p.id && q.name === p.name && q.brand === p.brand)) out.push("duplicate name");
+  return out;
+}
+/* merge local edits into the latest GitHub copy, so nothing done on another device is lost */
+async function publishOnce() {
+  const bm = new Map(BASE.map(p => [p.id, p]));
+  const remote = JSON.parse(await readFile("data/products.json")); remote.forEach(p => p.hidden = !!p.hidden);
+  const removed = BASE.filter(b => !P.some(p => p.id === b.id)), removedSlugs = new Set(removed.map(x => x.slug));
+  for (const p of P) {
+    const b = bm.get(p.id); if (!b || pk(p) === pk(b)) continue;
+    const r = remote.find(x => x.slug === p.slug); if (!r) continue;
+    KEYS.forEach(k => { if (JSON.stringify(p[k]) !== JSON.stringify(b[k])) r[k] = p[k] });
+  }
+  const merged = remote.filter(x => !removedSlugs.has(x.slug)), added = [];
+  for (const p of P.filter(x => !bm.has(x.id))) {
+    const q = clone(p);
+    if (merged.some(x => x.id === q.id)) q.id = Math.max(0, ...merged.map(x => x.id)) + 1;
+    if (merged.some(x => x.slug === q.slug)) q.slug = uniqSlug(q.slug, merged);
+    const o = Object.fromEntries(KEYS.map(k => [k, q[k]])); merged.push(o); added.push(o);
+  }
+  merged.sort((a, b) => a.pos - b.pos || a.id - b.id); merged.forEach((p, i) => p.pos = i + 1);
+  const pages = [];
+  merged.forEach(o => { const path = `product/${o.slug}.html`; if (!FILES.has(path)) pages.push({ path, text: productPage(o) }) });
+  removed.forEach(r => { const path = `product/${r.slug}.html`; if (FILES.has(path)) pages.push({ path, del: true }) });
+  const brandPages = brandsNow(merged).filter(b => !FILES.has(`brands/${b.toLowerCase()}.html`)).map(b => ({ path: `brands/${b.toLowerCase()}.html`, text: brandPage(b) }));
+  const { ent: photos, slots } = photoPlan(removedSlugs);
+  const c = counts();
+  const entries = [{ path: "data/products.json", text: JSON.stringify(merged, null, 1) }, { path: "assets/js/data.js", text: dataJs(merged, slots, SITE_NEW || SITE) }, ...pages, ...brandPages, ...photos];
+  if (SITE_NEW) entries.push({ path: "data/site.json", text: JSON.stringify(SITE_NEW, null, 1) + "\n" });
+  if (c.brands) entries.push({ path: "data/brands.json", text: JSON.stringify([...BRANDS_HIDDEN].sort(), null, 1) + "\n" });
+  const siteRoot = ((SITE_NEW || SITE).url || "").replace(/\/$/, "");
+  if (siteRoot) { entries.push({ path: "sitemap.xml", text: sitemapXml(merged, siteRoot) }); entries.push({ path: "robots.txt", text: `User-agent: *\nAllow: /\nDisallow: /manage-x7k2q9/\n\nSitemap: ${siteRoot}/sitemap.xml\n` }); }
+  const parts = [c.changed && `${c.changed} edited`, c.added && `${c.added} added`, c.removed && `${c.removed} removed`, c.photos && `${c.photos} photo change(s)`, c.site && "settings", brandPages.length && "new brand", c.brands && "brand visibility"].filter(Boolean);
+  await commit(entries, "Admin: " + (parts.join(", ") || "update"));
+}
+
+function sitemapXml(list, root) {
+  const vis = list.filter(p => !p.hidden && !BRANDS_HIDDEN.includes(p.brand));
+  const brs = [...new Set(vis.map(p => p.brand))].sort();
+  const paths = ["", "products.html", "brands.html", ...SEC.map(s => s.id + ".html"), ...brs.map(b => "brands/" + b.toLowerCase() + ".html"), ...vis.map(p => "product/" + p.slug + ".html")];
+  const today = new Date().toISOString().slice(0, 10);
+  return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + paths.map(x => `  <url><loc>${esc(root + "/" + x)}</loc><lastmod>${today}</lastmod></url>`).join("\n") + "\n</urlset>\n";
+}
+/* ---------- UI ---------- */
+function note(t, h) { $("#msg").innerHTML = h ? `<div class="note ${t}">${h}</div>` : "" }
+function chipRow(id, items, active, attr, cls = "") { $(id).innerHTML = items.map(([v, l]) => `<button type="button" class="chip ${cls}${active === v ? " on" : ""}" data-${attr}="${esc(v)}">${esc(l)}</button>`).join("") }
+function sorted(list) {
+  const L = [...list];
+  if (SORT === "plh") L.sort((a, b) => a.price - b.price);
+  else if (SORT === "phl") L.sort((a, b) => b.price - a.price);
+  else if (SORT === "name") L.sort((a, b) => a.name.localeCompare(b.name));
+  else if (SORT === "stock") L.sort((a, b) => ["in_stock", "on_order", "out_of_stock"].indexOf(a.stock) - ["in_stock", "on_order", "out_of_stock"].indexOf(b.stock) || a.pos - b.pos);
+  else L.sort((a, b) => a.pos - b.pos || a.id - b.id);
+  return L;
+}
+function thumbOf(p) {
+  const pend = (PHOTO[p.slug] || [])[0], old = (IMG[p.slug] || [])[0];
+  if (pend && pend.ext) return `<img src="data:image/${pend.ext === "jpg" ? "jpeg" : pend.ext};base64,${pend.b64}" alt="${esc(p.name)}">`;
+  if (!(pend && pend.remove) && old) return `<img src="../${esc(old.path)}" alt="${esc(p.name)}" loading="lazy">`;
+  return `<span title="No photo yet">${esc(String(p.brand || "").slice(0, 2))}</span>`;
+}
+function render() {
+  chipRow("#cats", [["", "All"], ...SEC.map(s => [s.id, s.label])], fc, "c");
+  chipRow("#brs", [["", "All brands"], ...brandsNow(P).map(b => [b, cap(b) + (BRANDS_HIDDEN.includes(b) ? " (hidden)" : "")])], fb, "b");
+  chipRow("#sts", [["", "Any stock"], ["in_stock", "In stock"], ["on_order", "On order"], ["out_of_stock", "Out of stock"], ["nophoto", "No photo"], ["attention", "⚠ Needs attention"]], fnp ? "nophoto" : fa ? "attention" : fs, "s", "");
+  saveView();
+  const q = fq.trim().toLowerCase();
+  SHOWN = sorted(P.filter(p => (!fc || p.group === fc) && (!fb || p.brand === fb) && (!fs || p.stock === fs) && (!fa || issues(p).length) && (!fnp || !((IMG[p.slug] || [])[0])) && (!q || (p.name + " " + p.brand + " " + p.specs.join(" ")).toLowerCase().includes(q))));
+  $("#sort").value = SORT;
+  $("#count").textContent = SHOWN.length + " of " + P.length + " products";
+  const canMove = fc && SORT === "pos" && !q && !fa;
+  $("#list").innerHTML = SHOWN.map(p => {
+    const iss = issues(p);
+    return `<li data-id="${p.id}" class="item clk${isDirty(p) ? " chg" : ""}${p.hidden ? " hid" : ""}">
+      <div class="mid">
+        <div class="thumb sq" title="Tap to add or change the photo">${thumbOf(p)}</div>
+        <div class="right">
+          <div class="itop">
+            <input type="checkbox" class="sel" data-sel="${p.id}" ${SEL.has(p.id) ? "checked" : ""} title="Select for bulk actions">
+            <span class="pos" title="Display position">#${p.pos}</span>
+            <div class="n"><b>${esc(p.name)}</b><small>${esc(cap(p.brand))} · ${esc(p.specs.join(" · "))}</small></div>
+            <div class="pr">${inr(p.price)}<s>${inr(p.mrp)}</s></div>
+          </div>
+          <div class="ibot">
+            ${iss.length ? `<span class="iss">⚠ ${esc(iss.join(" · "))}</span>` : ""}
+            <button type="button" class="pill ${p.stock}" data-tog="${p.id}" title="Tap to switch In stock / Out of stock">${SL[p.stock]}</button>
+            <button type="button" class="pill ${p.hidden ? "hidebtn" : "showbtn"}" data-vis="${p.id}" title="Show or hide on the website">${p.hidden ? "Hidden" : "Visible"}</button>
+            ${canMove ? `<div class="mv"><button type="button" data-up="${p.id}">▲ Up</button><button type="button" data-dn="${p.id}">▼ Down</button></div>` : ""}
+          </div>
+        </div>
+      </div>
+    </li>`;
+  }).join("") || `<li class="empty">${P.length ? "No products match these filters." : "No products loaded."}</li>`;
+  $("#bulk").hidden = !SEL.size && !(fc || fb || fs || fa || fnp);
+  $("#selCnt").textContent = SEL.size ? SEL.size + " selected" : "No selection – actions apply to all " + SHOWN.length + " shown";
+  const c = counts(); $("#bar").hidden = VIEW !== "products" || !c.total;
+  $("#cnt").textContent = c.total + (c.total === 1 ? " unpublished change" : " unpublished changes");
+}
+function showOnly(id) { ["#auth", "#app"].forEach(s => $(s).hidden = s !== id) }
+function showLogin() { showOnly("#auth"); $("#loginBox").hidden = false; $("#setupBox").hidden = true; $("#lPw").value = "" }
+async function start() {
+  const r = await fetch(new URL("vault.json", location.href), { cache: "no-store" });
+  if (r.status === 404) { showOnly("#auth"); $("#setupBox").hidden = false; $("#loginBox").hidden = true; return }
+  showLogin();
+}
+$("#fLogin").onsubmit = async e => {
+  e.preventDefault(); $("#lErr").innerHTML = "";
+  const lockUntil = +(sessionStorage.getItem("bha_lock") || 0);
+  if (Date.now() < lockUntil) return $("#lErr").innerHTML = `<div class="lockmsg">Too many wrong tries. Wait ${Math.ceil((lockUntil - Date.now()) / 1000)} seconds, then try again.</div>`;
+  try {
+    const txt = await (await fetch(new URL("vault.json", location.href), { cache: "no-store" })).text();
+    CFG = await open(txt, $("#lPw").value);
+    sessionStorage.removeItem("bha_tries"); sessionStorage.removeItem("bha_lock");
+    await loadAll(); showOnly("#app"); render(); showView("orders"); startPolling(); resetIdle();
+  } catch (x) {
+    CFG = null; await new Promise(r => setTimeout(r, 1500));
+    const tries = +(sessionStorage.getItem("bha_tries") || 0) + 1; sessionStorage.setItem("bha_tries", tries);
+    if (tries >= 5) { sessionStorage.setItem("bha_lock", Date.now() + 60000); sessionStorage.setItem("bha_tries", 0); }
+    if (x.message === "WRONG_PASSWORD" && tries < 5) return $("#lErr").innerHTML = `<div class="note er">Wrong password. ${5 - tries} attempt${5 - tries > 1 ? "s" : ""} left before a 1-minute pause.</div>`;
+    if (x.message === "WRONG_PASSWORD") return $("#lErr").innerHTML = `<div class="lockmsg">Too many wrong tries. Please wait 1 minute before trying again.</div>`;
+    $("#lErr").innerHTML = `<div class="note er">${x.message === "WRONG_PASSWORD" ? "Wrong password." : esc(x.message)}</div>`;
+  }
+};
+$("#fSetup").onsubmit = async e => {
+  e.preventDefault();
+  const repo = $("#sRepo").value.trim().replace(/^https?:\/\/github\.com\//, "").replace(/\/$/, ""), branch = $("#sBranch").value.trim() || "main";
+  const token = $("#sTok").value.trim(), pw = $("#sPw").value, pw2 = $("#sPw2").value, err = m => $("#sErr").innerHTML = `<div class="note er">${esc(m)}</div>`;
+  if (!/^[\w.-]+\/[\w.-]+$/.test(repo)) return err("Repository must look like owner/name");
+  if (pw.length < 12) return err("Password must be at least 12 characters");
+  if (pw !== pw2) return err("The two passwords do not match");
+  try {
+    CFG = { repo, branch, token }; await gh(`/repos/${repo}`);
+    await commit([{ path: "manage-x7k2q9/vault.json", text: await seal({ repo, branch, token }, pw) }], "Create admin vault (encrypted access)");
+    CFG = null; $("#setupBox").hidden = true; $("#loginBox").hidden = false;
+    $("#lErr").innerHTML = `<div class="note ok">Setup saved. Wait about a minute for the website to publish the new file, then log in with your password.</div>`;
+  } catch (x) { CFG = null; err(x.message) }
+};
+
+/* filters & list */
+$("#cats").onclick = e => { const v = e.target.dataset.c; if (v !== undefined) { fc = v; render() } };
+$("#brs").onclick = e => { const v = e.target.dataset.b; if (v !== undefined) { fb = v; render() } };
+$("#sts").onclick = e => { const v = e.target.dataset.s; if (v === undefined) return; fnp = false; fa = false; if (v === "attention") fa = true; else if (v === "nophoto") fnp = true; else fs = v; if (v === "attention" && fs) fs = ""; render() };
+$("#q").oninput = e => { fq = e.target.value; render() };
+$("#sort").onchange = e => { SORT = e.target.value; render() };
+$("#list").onclick = e => {
+  const t = e.target;
+  if (t.dataset.sel) { const id = +t.dataset.sel; t.checked ? SEL.add(id) : SEL.delete(id); render(); return }
+  if (t.dataset.up || t.dataset.dn) { moveWithin(+(t.dataset.up || t.dataset.dn), t.dataset.up ? -1 : 1); return }
+  if (t.dataset.vis) { const p = P.find(x => x.id === +t.dataset.vis); p.hidden = !p.hidden; render(); return }
+  if (t.dataset.tog) { const p = P.find(x => x.id === +t.dataset.tog); p.stock = p.stock === "out_of_stock" ? "in_stock" : "out_of_stock"; render(); return }
+  const th = t.closest(".thumb");
+  if (th) { const li2 = th.closest("li[data-id]"), p2 = P.find(x => x.id === +li2.dataset.id); if (p2) { openEdit(p2); setTimeout(() => { const f = document.querySelector('input[data-slot="0"]'); if (f) f.click() }, 120) } return }
+  const li = t.closest("li[data-id]"); if (!li || t.closest("input")) return;
+  openEdit(P.find(x => x.id === +li.dataset.id));
+};
+function moveWithin(id, dir) {
+  const p = P.find(x => x.id === id), group = P.filter(q => q.group === p.group).sort((a, b) => a.pos - b.pos);
+  const i = group.indexOf(p), j = i + dir; if (j < 0 || j >= group.length) return;
+  const other = group[j], tmp = p.pos; p.pos = other.pos; other.pos = tmp;
+  normalizePos(); render();
+}
+
+/* bulk actions (selected products, or everything shown when nothing is selected) */
+function targets(verb) {
+  const list = SEL.size ? P.filter(p => SEL.has(p.id)) : SHOWN;
+  if (!list.length) { alert("Nothing to change."); return [] }
+  if (!SEL.size && !confirm(`${verb} ALL ${list.length} products shown?`)) return [];
+  return list;
+}
+$("#bPctGo").onclick = () => {
+  const x = parseFloat($("#bPct").value); if (!x) return alert("Type a percentage, e.g. 5 or -3");
+  const list = targets(`Change prices by ${x}% for`); if (!list.length) return;
+  let clamped = 0;
+  const rnd = +$("#bRound").value;
+  list.forEach(p => { let np = Math.max(1, Math.round(p.price * (1 + x / 100))); if (rnd) np = Math.max(rnd, Math.round(np / rnd) * rnd); if (np > p.mrp) { np = p.mrp; clamped++ } p.price = np });
+  render(); note("in", `Prices changed for ${list.length} product(s).` + (clamped ? ` ${clamped} capped at MRP.` : ""));
+};
+$("#bStock").onchange = e => { if (!e.target.value) return; const list = targets("Set stock for"); list.forEach(p => p.stock = e.target.value); e.target.value = ""; render() };
+$("#bShow").onclick = () => { targets("Show on the website").forEach(p => p.hidden = false); render() };
+$("#bHide").onclick = () => { targets("Hide from the website").forEach(p => p.hidden = true); render() };
+$("#bFeatOn").onclick = () => { targets("Feature").forEach(p => p.featured = true); render() };
+$("#bFeatOff").onclick = () => { targets("Un-feature").forEach(p => p.featured = false); render() };
+$("#bSelAll").onclick = () => { SHOWN.forEach(p => SEL.add(p.id)); render() };
+$("#bSelClr").onclick = () => { SEL.clear(); render() };
+$("#bDel").onclick = () => {
+  const list = SEL.size ? P.filter(p => SEL.has(p.id)) : []; if (!list.length) return alert("Select products first (tick the boxes).");
+  if (!confirm(`Delete ${list.length} product(s)? They disappear from the website after you Publish.`)) return;
+  P = P.filter(p => !SEL.has(p.id)); SEL.clear(); normalizePos(); render();
+};
+
+/* product editor */
+function setStock(v) { ESTOCK = v; document.querySelectorAll("#e_stock button").forEach(b => b.classList.toggle("on", b.dataset.s === v)) }
+function slotBox() {
+  const box = $("#photoBox");
+  if (!cur) { box.innerHTML = `<span class="mut" style="grid-column:1/-1">Save the product first, then edit it to add photos.</span>`; return }
+  const pend = PHOTO[cur.slug] || [null, null, null, null], old = IMG[cur.slug] || [null, null, null, null];
+  box.innerHTML = [0, 1, 2, 3].map(s => {
+    const op = pend[s], o = old[s];
+    const src = op && op.remove ? "" : op && op.ext ? `data:image/${op.ext === "jpg" ? "jpeg" : op.ext};base64,${op.b64}` : o ? "../" + o.path : "";
+    return `<div class="slot"><div class="ph">${src ? `<img src="${src}" alt="">` : (s === 0 ? "Main photo" : "Photo " + (s + 1))}</div>
+      <input type="file" data-slot="${s}" accept="image/jpeg,image/png,image/webp">${src ? `<button type="button" class="btn dng" data-rm="${s}" style="padding:4px">Remove</button>` : ""}</div>`;
+  }).join("");
+  box.querySelectorAll("input[data-slot]").forEach(inp => inp.onchange = ev => {
+    const s = +inp.dataset.slot, f = ev.target.files[0]; if (!f) return;
+    const ext = { "image/webp": "webp", "image/jpeg": "jpg", "image/png": "png" }[f.type];
+    if (!ext) return alert("Use a JPG, PNG or WebP photo");
+    if (f.size > 1.5e6) return alert("Photo is over 1.5 MB. Please resize it first.");
+    const rd = new FileReader(); rd.onload = () => { PHOTO[cur.slug] = PHOTO[cur.slug] || [null, null, null, null]; PHOTO[cur.slug][s] = { ext, b64: String(rd.result).split(",")[1] }; slotBox(); render() }; rd.readAsDataURL(f);
+  });
+  box.querySelectorAll("[data-rm]").forEach(b => b.onclick = () => { PHOTO[cur.slug] = PHOTO[cur.slug] || [null, null, null, null]; PHOTO[cur.slug][+b.dataset.rm] = { remove: true }; slotBox(); render() });
+}
+function openEdit(p, copy) {
+  cur = p || null;
+  const d = p ? clone(p) : copy ? { ...clone(copy), id: 0, slug: "", name: copy.name + " (copy)", pos: 0 } : { id: 0, slug: "", pos: 0, brand: "", name: "", specs: ["", ""], price: "", mrp: "", badge: "POPULAR", desc: "", stock: "in_stock", group: fc || SEC[0].id, featured: false, isNew: false };
+  if (copy && !p) cur = null;
+  $("#eTitle").textContent = p ? "Edit product" : copy ? "Duplicate product" : "Add product";
+  $("#eDup").hidden = !p; $("#eDel").hidden = !p; $("#eErr").hidden = true;
+  const brands = brandsNow(P);
+  $("#e_brand").innerHTML = brands.map(b => `<option value="${esc(b)}">${esc(cap(b))}</option>`).join("") + `<option value="__new__">+ New brand…</option>`;
+  $("#e_group").innerHTML = SEC.map(s => `<option value="${s.id}">${esc(s.label)}</option>`).join("");
+  $("#e_name").value = d.name; $("#e_brand").value = d.brand || brands[0]; $("#newBrandBox").hidden = true; $("#e_newbrand").value = "";
+  $("#e_group").value = d.group; $("#e_s1").value = d.specs[0]; $("#e_s2").value = d.specs[1]; $("#e_price").value = d.price; $("#e_mrp").value = d.mrp;
+  $("#e_vis").checked = !d.hidden; $("#eRevert").hidden = !(p && isDirty(p)); $("#e_pos").value = p ? p.pos : ""; $("#e_badge").value = d.badge; $("#e_feat").checked = d.featured; $("#e_new").checked = d.isNew; $("#e_desc").value = d.desc;
+  setStock(d.stock); slotBox(); warnPrice(); $("#dEdit").showModal();
+}
+function warnPrice() { const v = +$("#e_price").value, m = +$("#e_mrp").value; $("#e_warn").hidden = !(v > m && v && m) }
+$("#e_price").oninput = warnPrice; $("#e_mrp").oninput = warnPrice;
+$("#e_brand").onchange = e => { $("#newBrandBox").hidden = e.target.value !== "__new__" };
+document.querySelectorAll("[data-adj]").forEach(b => b.onclick = () => { $("#e_price").value = Math.max(1, (+$("#e_price").value || 0) + +b.dataset.adj); warnPrice() });
+document.querySelectorAll("#e_stock button").forEach(b => b.onclick = () => setStock(b.dataset.s));
+$("#eCancel").onclick = () => $("#dEdit").close();
+$("#eDup").onclick = () => { $("#dEdit").close(); openEdit(null, cur) };
+$("#fEdit").onsubmit = e => {
+  e.preventDefault();
+  const v = id => $("#e_" + id).value.trim(), err = m => { $("#eErr").textContent = m; $("#eErr").hidden = false };
+  let brand = v("brand").toUpperCase();
+  if ($("#e_brand").value === "__new__") {
+    const nb = v("newbrand").toUpperCase();
+    if (!/^[A-Z0-9-]{2,30}$/.test(nb)) return err("New brand: use 2–30 letters, numbers or hyphens");
+    if (brandsNow(P).includes(nb)) return err("That brand already exists – choose it from the list");
+    brand = nb;
+  }
+  const price = Math.round(+v("price")), mrp = Math.round(+v("mrp")), group = $("#e_group").value, ref = P.find(p => p.group === group) || BASE.find(p => p.group === group);
+  if (!ref) return err("Choose a category");
+  const f = { hidden: !$("#e_vis").checked, brand, name: v("name"), specs: [v("s1"), v("s2")], price, mrp, badge: (v("badge") || "POPULAR").toUpperCase().slice(0, 14), desc: $("#e_desc").value.trim(), stock: ESTOCK, group, cat: ref.cat, t: ref.t, featured: $("#e_feat").checked, isNew: $("#e_new").checked };
+  if (!f.name || !f.specs[0] || !f.specs[1] || !f.desc) return err("Name, size/model, key feature and description are required");
+  if (/[<>]/.test(JSON.stringify(f))) return err("Please remove < and > characters");
+  if (!(price > 0) || !(mrp >= price)) return err("Selling price must be above 0 and not higher than MRP");
+  const want = +v("pos");
+  if (cur) Object.assign(P.find(x => x.id === cur.id), f);
+  else {
+    const id = Math.max(0, ...P.map(x => x.id)) + 1, slug = uniqSlug(slugify(brand + " " + f.name + " " + f.specs[0]), P);
+    P.push(Object.fromEntries(KEYS.map(k => [k, k === "id" ? id : k === "slug" ? slug : k === "pos" ? 0 : f[k]])));
+  }
+  const me = P.find(x => cur ? x.id === cur.id : x.slug === (cur ? cur.slug : P[P.length - 1].slug));
+  if (want > 0 && !(cur && want === cur.pos)) me.pos = want - 0.5; else if (!cur) me.pos = P.length + 1;
+  normalizePos();
+  $("#dEdit").close(); render();
+};
+$("#eRevert").onclick = () => {
+  const b = BASE.find(x => x.id === cur.id); if (!b) return;
+  if (!confirm("Undo all unpublished changes to this product?")) return;
+  Object.assign(P.find(x => x.id === cur.id), clone(b)); normalizePos(); $("#dEdit").close(); render();
+};
+$("#eDel").onclick = () => {
+  if (!cur || !confirm(`Delete "${cur.name}"?\nIt disappears from the website after you Publish.`)) return;
+  P = P.filter(x => x.id !== cur.id); normalizePos(); $("#dEdit").close(); render();
+};
+$("#bAdd").onclick = () => openEdit(null);
+
+/* CSV export / import */
+const csvEsc = v => { const s = String(v ?? ""); return /[",\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s };
+$("#bExp").onclick = () => {
+  const cols = ["id", "pos", "name", "brand", "group", "size", "feature", "price", "mrp", "stock", "badge", "featured", "isNew", "desc"];
+  const rows = [cols.join(",")].concat(P.map(p => [p.id, p.pos, p.name, p.brand, p.group, p.specs[0], p.specs[1], p.price, p.mrp, p.stock, p.badge, p.featured ? 1 : 0, p.isNew ? 1 : 0, p.desc].map(csvEsc).join(",")));
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["\ufeff" + rows.join("\r\n")], { type: "text/csv;charset=utf-8" })); a.download = "products.csv"; a.click();
+};
+function parseCsv(text) {
+  const rows = []; let row = [], f = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) { if (c === '"') { if (text[i + 1] === '"') { f += '"'; i++ } else q = false } else f += c }
+    else if (c === '"') q = true;
+    else if (c === ",") { row.push(f); f = "" }
+    else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(f); f = ""; if (row.length > 1 || row[0] !== "") rows.push(row); row = [] }
+    else f += c;
+  }
+  if (f !== "" || row.length) { row.push(f); rows.push(row) }
+  return rows;
+}
+$("#bImp").onclick = () => $("#csvIn").click();
+$("#csvIn").onchange = async e => {
+  const file = e.target.files[0]; e.target.value = ""; if (!file) return;
+  const rows = parseCsv((await file.text()).replace(/^\ufeff/, "")); if (rows.length < 2) return alert("The file has no product rows.");
+  const head = rows.shift().map(h => h.trim().toLowerCase()), ix = n => head.indexOf(n);
+  if (ix("id") < 0) return alert("The CSV needs an 'id' column. Use Export CSV to get the right format.");
+  let upd = 0; const skip = [];
+  rows.forEach((r, ln) => {
+    const id = +r[ix("id")], p = P.find(x => x.id === id), line = ln + 2;
+    if (!p) return skip.push(`line ${line}: id ${r[ix("id")]} not found`);
+    const price = ix("price") >= 0 ? Math.round(+r[ix("price")]) : p.price, mrp = ix("mrp") >= 0 ? Math.round(+r[ix("mrp")]) : p.mrp;
+    const stock = ix("stock") >= 0 ? (r[ix("stock")] || "").trim() : p.stock;
+    if (!(price > 0) || !(mrp >= price)) return skip.push(`line ${line}: price must be above 0 and not above MRP`);
+    if (!SL[stock]) return skip.push(`line ${line}: stock must be in_stock, on_order or out_of_stock`);
+    p.price = price; p.mrp = mrp; p.stock = stock;
+    if (ix("pos") >= 0 && r[ix("pos")] !== "") p.pos = +r[ix("pos")] - 0.5;
+    upd++;
+  });
+  normalizePos(); render();
+  note(skip.length ? "er" : "ok", `<b>${upd} product(s) updated</b> from the file (not published yet).` + (skip.length ? `<br>Skipped ${skip.length}: ${esc(skip.slice(0, 5).join("; "))}${skip.length > 5 ? "…" : ""}` : ""));
+};
+
+/* history & restore */
+$("#bHist").onclick = async () => {
+  $("#dHist").showModal(); $("#histList").innerHTML = `<li>Loading…</li>`;
+  try {
+    const cs = await gh(`/repos/${CFG.repo}/commits?sha=${encodeURIComponent(CFG.branch)}&path=data/products.json&per_page=30`);
+    $("#histList").innerHTML = cs.map((c, i) => `<li><div class="n"><b>${esc(c.commit.message.split("\n")[0])}</b><small>${esc(new Date(c.commit.author.date).toLocaleString("en-IN"))}</small></div>${i === 0 ? '<span class="mut">current</span>' : `<button type="button" class="btn" data-restore="${c.sha}">Restore</button>`}</li>`).join("") || `<li>No history yet.</li>`;
+  } catch (x) { $("#histList").innerHTML = `<li class="note er">${esc(x.message)}</li>` }
+};
+$("#histList").onclick = async e => {
+  const sha = e.target.dataset.restore; if (!sha) return;
+  if (!confirm("Restore the product list from this point? Prices, stock, positions and product details go back to that version.")) return;
+  try {
+    const list = JSON.parse(await readFile("data/products.json", sha));
+    const slots = {}; for (const slug of Object.keys(IMG)) slots[slug] = IMG[slug];
+    await commit([{ path: "data/products.json", text: JSON.stringify(list, null, 1) }, { path: "assets/js/data.js", text: dataJs(list, slots, SITE) }], "Admin: restored product list from an earlier version");
+    $("#dHist").close(); await loadAll(); render(); note("ok", "<b>Restored.</b> The website shows that version within about a minute.");
+  } catch (x) { note("er", "<b>Restore failed:</b> " + esc(x.message)) }
+};
+$("#hClose").onclick = () => $("#dHist").close();
+
+/* settings & password */
+$("#bSet").onclick = () => { const s = SITE_NEW || SITE; $("#s_url").value = s.url || ""; $("#s_wa").value = s.whatsapp || ""; $("#s_ph").value = s.phone || ""; $("#s_hr").value = s.hours || ""; $("#logoNow").textContent = LOGO_PATH ? "Current logo: " + LOGO_PATH.split("/").pop() : "No logo yet – upload one below."; const bn = s.banner || {}; $("#s_bon").checked = !!bn.on; $("#s_bt").value = bn.title || ""; $("#s_btx").value = bn.text || ""; $("#s_bl").value = bn.link || ""; $("#s_bll").value = bn.linkText || ""; $("#s_grate").value = s.googleRating || ""; $("#s_gurl").value = s.googleReviewUrl || ""; $("#s_email").value = s.email || ""; $("#s_gstin").value = s.gstin || ""; $("#s_state").value = s.state || ""; $("#s_gst").value = s.gstRate || ""; $("#s_hsn").value = s.hsn || ""; $("#s_ourl").value = s.ordersUrl || ""; $("#s_okey").value = ""; $("#s_okey").placeholder = CFG && CFG.ordersKey ? "Saved – type to change" : ""; $("#s_okpw").value = ""; $("#dSet").showModal() };
+$("#sCancel").onclick = () => $("#dSet").close();
+$("#fSet").onsubmit = async e => {
+  e.preventDefault();
+  const url = $("#s_url").value.trim(), wa = $("#s_wa").value.replace(/\D/g, ""), ph = $("#s_ph").value.trim(), hr = $("#s_hr").value.trim();
+  const ourl = $("#s_ourl").value.trim(), okey = $("#s_okey").value.trim(), opw = $("#s_okpw").value;
+  if (url && !/^https:\/\/[^\s<>"]+$/.test(url)) return alert("Website address must start with https://");
+  if (wa && (wa.length < 10 || wa.length > 15)) return alert("WhatsApp: digits with country code, e.g. 919876543210");
+  if (/[<>"]/.test(ph + hr)) return alert("Phone or hours contain invalid characters");
+  if (ourl && !/^https:\/\/script\.google\.com\/macros\/s\/[^\s]+\/exec$/.test(ourl)) return alert("Orders web address should look like https://script.google.com/macros/s/.../exec");
+  if (okey) {
+    if (!opw) return alert("Type your admin password to save the orders key");
+    try { await saveOrdersKey(okey, opw) } catch (x) { return alert(x.message === "WRONG_PASSWORD" ? "That admin password is not correct" : "Could not save the orders key: " + x.message) }
+  }
+  SITE_NEW = { ...SITE, url, whatsapp: wa, phone: ph, hours: hr, ordersUrl: ourl, banner: { on: $("#s_bon").checked, title: $("#s_bt").value.trim(), text: $("#s_btx").value.trim(), link: $("#s_bl").value.trim(), linkText: $("#s_bll").value.trim() }, googleRating: $("#s_grate").value.trim(), googleReviewUrl: $("#s_gurl").value.trim(), email: $("#s_email").value.trim(), gstin: $("#s_gstin").value.trim().toUpperCase(), state: $("#s_state").value.trim(), gstRate: +$("#s_gst").value || 18, hsn: $("#s_hsn").value.trim() || "8536" }; $("#dSet").close(); render();
+  if (okey || ourl) { NOTIFIED = null; startPolling(); }
+};
+$("#bBackup").onclick = () => {
+  const data = { exported: new Date().toISOString(), products: P, brandsHidden: BRANDS_HIDDEN, site: SITE, sections: SEC, categories: CATS, details: DET };
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 1)], { type: "application/json" })); a.download = "shop-backup-" + new Date().toISOString().slice(0, 10) + ".json"; a.click();
+};
+$("#bLogout").onclick = () => { if (counts().total && !confirm("Lock now? Unpublished changes will be lost.")) return; location.reload() };
+$("#bPw").onclick = () => { $("#p_1").value = ""; $("#p_2").value = ""; $("#pErr").hidden = true; $("#dPw").showModal() };
+$("#pCancel").onclick = () => $("#dPw").close();
+$("#fPw").onsubmit = async e => {
+  e.preventDefault(); const a = $("#p_1").value, b = $("#p_2").value, err = m => { $("#pErr").textContent = m; $("#pErr").hidden = false };
+  if (a.length < 12) return err("Use at least 12 characters");
+  if (a !== b) return err("The two passwords do not match");
+  try {
+    await commit([{ path: "manage-x7k2q9/vault.json", text: await seal({ repo: CFG.repo, branch: CFG.branch, token: CFG.token }, a) }], "Admin: change password");
+    $("#dPw").close(); note("ok", "<b>Password changed.</b> Use the new one next time you unlock.");
+  } catch (x) { err(x.message) }
+};
+
+/* brand visibility */
+function renderBrands() {
+  $("#brandList").innerHTML = brandsNow(P).map(b => {
+    const n = P.filter(p => p.brand === b).length, hid = BRANDS_HIDDEN.includes(b);
+    return `<li><div class="n"><b>${esc(cap(b))}</b><small>${n} product${n === 1 ? "" : "s"}</small></div><span style="display:flex;gap:6px;flex-wrap:wrap"><button type="button" class="pill ${hid ? "hidebtn" : "showbtn"}" data-bvis="${esc(b)}">${hid ? "Hidden – tap to show" : "Shown – tap to hide"}</button><button type="button" class="mbtn" data-blogo="${esc(b)}">Logo</button><button type="button" class="mbtn" data-bstock="${esc(b)}|in_stock">All in stock</button><button type="button" class="mbtn" data-bstock="${esc(b)}|out_of_stock">All out of stock</button></span></li>`;
+  }).join("") || `<li>No brands yet.</li>`;
+}
+$("#bBrands").onclick = () => { renderBrands(); $("#dBrands").showModal() };
+$("#brandList").onclick = e => {
+  const bs = e.target.dataset.bstock;
+  if (bs) { const [brand, st] = bs.split("|"), n = P.filter(p => p.brand === brand).length; if (confirm(`Set ${n} ${cap(brand)} product(s) to ${SL[st]}?`)) { P.forEach(p => { if (p.brand === brand) p.stock = st }); renderBrands(); render() } return }
+  const b = e.target.dataset.bvis; if (!b) return;
+  BRANDS_HIDDEN = BRANDS_HIDDEN.includes(b) ? BRANDS_HIDDEN.filter(x => x !== b) : [...BRANDS_HIDDEN, b];
+  renderBrands();
+};
+$("#brClose").onclick = () => { $("#dBrands").close(); render() };
+
+/* publish & discard */
+function changeSummary() {
+  const bm = new Map(BASE.map(p => [p.id, p])); let price = 0, stock = 0, vis = 0, other = 0;
+  P.forEach(p => {
+    const b = bm.get(p.id); if (!b) return;
+    const pc = b.price !== p.price || b.mrp !== p.mrp, sc = b.stock !== p.stock, vc = !!b.hidden !== !!p.hidden;
+    if (pc) price++; if (sc) stock++; if (vc) vis++;
+    if (!pc && !sc && !vc && pk(p) !== pk(b)) other++;
+  });
+  const added = P.filter(p => !bm.has(p.id)).length, removed = BASE.filter(b => !P.some(p => p.id === b.id)).length, c = counts();
+  const parts = [price && `${price} price${price > 1 ? "s" : ""}`, stock && `${stock} stock`, vis && `${vis} visibility`, other && `${other} other edit${other > 1 ? "s" : ""}`, added && `${added} added`, removed && `${removed} removed`, c.photos && `${c.photos} photo change${c.photos > 1 ? "s" : ""}`, c.brands && "brand visibility", c.site && "settings"].filter(Boolean);
+  return parts.join(", ") || "no changes";
+}
+$("#bDisc").onclick = async () => { if (!confirm("Discard all unpublished changes?")) return; try { await loadAll(); note("", ""); render() } catch (x) { note("er", esc(x.message)) } };
+$("#bPub").onclick = async () => {
+  const bad = validate(P); if (bad) return note("er", esc(bad));
+  const summary = changeSummary();
+  $("#bPub").disabled = true; $("#bPub").textContent = "Publishing…"; note("in", "Publishing… this takes a few seconds.");
+  try {
+    for (let a = 0; a < 2; a++) { try { await publishOnce(); break } catch (x) { if (x.message === "CONFLICT" && a === 0) continue; throw x } }
+    await loadAll(); render();
+    note("ok", `<b>Published:</b> ${esc(summary)}. The website shows the changes within about a minute.`);
+  } catch (x) { note("er", "<b>Not published:</b> " + esc(x.message)) }
+  finally { $("#bPub").disabled = false; $("#bPub").textContent = "Publish" }
+};
+/* ---------- auto-lock after 15 minutes without use ---------- */
+let IDLE = null;
+function resetIdle() {
+  clearTimeout(IDLE);
+  IDLE = setTimeout(() => { if (counts().total) { resetIdle(); return } location.reload() }, 15 * 60 * 1000);
+}
+["pointerdown", "keydown"].forEach(ev => addEventListener(ev, () => { if (CFG) resetIdle() }));
+
+/* ---------- logos ---------- */
+const fileB64 = file => new Promise((ok, no) => { const rd = new FileReader(); rd.onload = () => ok(String(rd.result).split(",")[1]); rd.onerror = no; rd.readAsDataURL(file) });
+async function uploadImage(file, target, exts, label) {
+  const ext = { "image/png": "png", "image/jpeg": "jpg", "image/webp": "webp" }[file.type];
+  if (!ext) return alert("Use a PNG, JPG or WebP image");
+  if (file.size > 1.5e6) return alert("Image must be under 1.5 MB");
+  const path = target(ext), del = exts.map(e => target(e)).filter(p => p !== path && FILES.has(p)).map(p => ({ path: p, del: true }));
+  const b64 = await fileB64(file);
+  if (label === "logo") LOGO_PATH = path; else BRAND_LOGOS_MAP[label.slug] = path;
+  await commit([...del, { path, b64 }, { path: "assets/js/data.js", text: dataJs(BASE, IMG, SITE_NEW || SITE) }], "Admin: " + (label === "logo" ? "shop logo" : "brand logo " + label.slug));
+  await loadAll(); render();
+  note("ok", label === "logo" ? "<b>Logo saved.</b> It shows on the website within about a minute." : `<b>Logo saved</b> for ${esc(cap(label.slug))}.`);
+}
+$("#s_logo").onchange = async e => { const f = e.target.files[0]; e.target.value = ""; if (f) { try { await uploadImage(f, ext => "assets/img/logo." + ext, ["png", "jpg", "webp"], "logo") } catch (x) { alert("Could not save the logo: " + x.message) } } };
+$("#brandList").addEventListener("click", e => { const b = e.target.dataset.blogo; if (!b) return; window.__logoBrand = b.toLowerCase(); $("#brandLogoIn").click() });
+$("#brandLogoIn").onchange = async e => { const f = e.target.files[0]; e.target.value = ""; const slug = window.__logoBrand; if (f && slug) { try { await uploadImage(f, ext => "assets/img/brands/" + slug + "." + ext, ["png", "jpg", "webp"], { slug }) } catch (x) { alert("Could not save the logo: " + x.message) } } };
+
+/* ---------- customer orders (stored in your Google Sheet; the key is kept in the encrypted vault) ---------- */
+const ORDER_STATUSES = ["New", "Confirmed", "Packed", "Delivered", "Cancelled"];
+let ORDERS = [];
+let SEEN = null, POLLT = null, NOTIFIED = null;
+function beep() { try { const a = new (window.AudioContext || window.webkitAudioContext)(), o = a.createOscillator(), g = a.createGain(); o.connect(g); g.connect(a.destination); o.frequency.value = 880; g.gain.setValueAtTime(0.25, a.currentTime); g.gain.exponentialRampToValueAtTime(0.001, a.currentTime + 0.6); o.start(); o.stop(a.currentTime + 0.6); } catch (e) {} }
+function notifyNew(fresh) {
+  beep();
+  const first = fresh[0], unseen = ORDERS.filter(o => !SEEN.has(o.id)).length;
+  $("#newBanner").hidden = false;
+  $("#newBanner").textContent = `🔔 ${fresh.length === 1 ? "New order from " + first.name : fresh.length + " new orders"} – tap to open Orders`;
+  document.title = `(${unseen}) New order – Shop Admin`;
+  if ("Notification" in window && Notification.permission === "granted") {
+    new Notification("New order – Bombay Hardware", { body: fresh.length === 1 ? `${first.name} · ${first.phone} · ${inr(first.total || 0)}` : `${fresh.length} new orders waiting`, tag: "new-orders" });
+  }
+}
+async function pollOrders() {
+  if (!CFG || !CFG.ordersKey || !(SITE_NEW || SITE).ordersUrl) return;
+  let list; try { list = await ordersApi(); } catch (e) { return; }
+  if (NOTIFIED === null) NOTIFIED = new Set(list.map(o => o.id));
+  if (SEEN === null) SEEN = new Set(list.map(o => o.id));
+  const fresh = list.filter(o => !NOTIFIED.has(o.id));
+  fresh.forEach(o => NOTIFIED.add(o.id));
+  ORDERS = list;
+  renderOrders();
+  if (fresh.length) notifyNew(fresh);
+}
+function startPolling() { clearInterval(POLLT); POLLT = setInterval(pollOrders, 45000); pollOrders(); notifyButton("Notification" in window ? Notification.permission : "unsupported"); }
+async function saveOrdersKey(key, pw) {
+  const obj = await open(await (await fetch(new URL("vault.json", location.href), { cache: "no-store" })).text(), pw);
+  obj.ordersKey = key;
+  await commit([{ path: "manage-x7k2q9/vault.json", text: await seal(obj, pw) }], "Admin: update orders key");
+  CFG.ordersKey = key;
+}
+async function ordersApi(body) {
+  const url = (SITE_NEW || SITE).ordersUrl;
+  if (!url) throw new Error("Set the Orders web address in Settings first");
+  if (!CFG.ordersKey) throw new Error("Set the Orders key in Settings first");
+  if (body) {
+    const r = await fetch(url, { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify({ ...body, key: CFG.ordersKey }) });
+    const j = await r.json(); if (j.error) throw new Error(j.error); return j;
+  }
+  const r = await fetch(url + "?key=" + encodeURIComponent(CFG.ordersKey), { cache: "no-store" });
+  const j = await r.json(); if (j.error) throw new Error(j.error); return j.orders || [];
+}
+function orderCard(o) {
+  const items = String(o.items || "").split("\n").filter(Boolean).map(esc).join("<br>");
+  const digits = String(o.phone || "").replace(/\D/g, ""), wa = digits.length === 10 ? "91" + digits : digits;
+  const pay = o.payment === "Paid" ? "Paid" : o.payment === "Pay on delivery" ? "Pay on delivery" : "Not paid";
+  return `<li class="ocard"><div class="oh"><b>${esc(o.id)}</b><small class="mut">${esc(o.when)}</small></div>
+    <div><b>${esc(o.name)}</b> · ${esc(o.phone)}<br><small class="mut">${esc(o.mode)}${o.address ? " · " + esc(o.address) : ""}</small></div>
+    <div class="oi">${items || "<span class='mut'>No items</span>"}</div>
+    <div class="oF"><b>${inr(o.total || 0)}</b>
+      <select data-oid="${esc(o.id)}">${ORDER_STATUSES.map(st => `<option${st === o.status ? " selected" : ""}>${st}</option>`).join("")}</select>
+      <select class="pay" data-pay="${esc(o.id)}">${["Not paid", "Paid", "Pay on delivery"].map(v => `<option${v === pay ? " selected" : ""}>${v}</option>`).join("")}</select></div>
+    ${o.flags ? `<div><span class="flagbad">⚠ Check: ${esc(o.flags)}</span></div>` : ""}
+    ${o.adminFlag ? `<div><span class="flagbad">⚑ Marked irrelevant by admin</span></div>` : ""}
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <a class="ocall" href="tel:+${esc(wa)}">📞 Call</a>
+      <a class="ocall" href="https://wa.me/${esc(wa)}" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <button type="button" class="mbtn" data-print="${esc(o.id)}">🧾 Print bill (A4)</button>
+      <button type="button" class="mbtn" data-oid="${esc(o.id)}" data-mark="${o.adminFlag ? "" : "Irrelevant"}">${o.adminFlag ? "Clear irrelevant mark" : "Mark irrelevant"}</button>
+    </div></li>`;
+}
+function inWords(n) {
+  n = Math.round(n); if (!n) return "Zero";
+  const o = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+  const t = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+  const two = v => v < 20 ? o[v] : t[Math.floor(v / 10)] + (v % 10 ? " " + o[v % 10] : "");
+  const three = v => { const h = Math.floor(v / 100), r = v % 100; return (h ? o[h] + " Hundred" + (r ? " " : "") : "") + (r ? two(r) : ""); };
+  let out = "";
+  const cr = Math.floor(n / 1e7), la = Math.floor(n / 1e5) % 100, th = Math.floor(n / 1000) % 100, hu = n % 1000;
+  if (cr) out += two(cr) + " Crore "; if (la) out += two(la) + " Lakh "; if (th) out += two(th) + " Thousand "; if (hu) out += three(hu);
+  return out.trim();
+}
+function orderLines(o) {
+  return String(o.items || "").split("\n").filter(Boolean).map(line => {
+    const m = line.match(/^(\d+) x (.*) \((.*), (.*)\) = ([\d.]+)$/);
+    const l = m ? { qty: +m[1], name: m[2], brand: m[3], specs: m[4], amount: +m[5] } : { qty: 1, name: line, brand: "", specs: "", amount: 0 };
+    // the category of the product decides the HSN code
+    const p = P.find(x => x.name === l.name && cap(x.brand) === l.brand);
+    const sec = p ? SEC.find(x => x.id === p.group) : null;
+    l.hsn = (sec && sec.hsn) || (SITE_NEW || SITE).hsn || "8536";
+    return l;
+  });
+}
+function printSlip(o) {
+  const cfg = SITE_NEW || SITE, rate = (+cfg.gstRate || 18) / 100;
+  const lines = orderLines(o), total = +o.total || lines.reduce((s, l) => s + l.amount, 0);
+  const pay = o.payment === "Paid" ? "Paid" : o.payment === "Pay on delivery" ? "Cash on delivery" : "Pending";
+  const received = o.payment === "Paid" ? total : 0, balance = total - received;
+  const f = v => Number(v).toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const pct = (rate * 100 / 2).toFixed(1);
+  // every item: taxable value, GST and amount (prices include GST)
+  const calc = lines.map(l => {
+    const amt = l.amount || 0, lt = Math.round(amt / (1 + rate) * 100) / 100, lg = Math.round((amt - lt) * 100) / 100;
+    return { ...l, amt, lt, lg };
+  });
+  const rows = calc.map((l, i) => `<tr><td>${i + 1}</td><td style="text-align:left">${esc(cap(l.brand))} ${esc(l.name)}${l.specs ? " (" + esc(l.specs) + ")" : ""}</td><td>${esc(l.hsn)}</td><td class="r">${l.qty}</td><td>Pcs</td><td class="r">${f(l.qty ? l.lt / l.qty : l.lt)}</td><td class="r">${f(l.lg)}</td><td class="r">${f(l.amt)}</td></tr>`).join("");
+  // GST summary: one row per HSN code
+  const byHsn = {};
+  calc.forEach(l => { const g = byHsn[l.hsn] || (byHsn[l.hsn] = { taxable: 0, tax: 0 }); g.taxable += l.lt; g.tax += l.lg; });
+  const sumRows = Object.keys(byHsn).map(h => {
+    const g = byHsn[h], tax = Math.round(g.tax * 100) / 100, cg = Math.round(tax / 2 * 100) / 100, sg = Math.round((tax - cg) * 100) / 100;
+    return { h, taxable: Math.round(g.taxable * 100) / 100, cg, sg, tax };
+  });
+  const sumTaxable = sumRows.reduce((s, r) => s + r.taxable, 0), sumCg = sumRows.reduce((s, r) => s + r.cg, 0), sumSg = sumRows.reduce((s, r) => s + r.sg, 0), sumTax = sumRows.reduce((s, r) => s + r.tax, 0);
+  const sumHtml = sumRows.map(r => `<tr><td>${esc(r.h)}</td><td class="r">${f(r.taxable)}</td><td class="r">${pct}</td><td class="r">${f(r.cg)}</td><td class="r">${pct}</td><td class="r">${f(r.sg)}</td><td class="r">${f(r.tax)}</td><td class="c"></td></tr>`).join("");
+  $("#printArea").innerHTML = `<div class="inv">
+    <table class="g"><tr><td colspan="2" class="c b">Tax Invoice</td></tr>
+    <tr><td style="width:62%">${LOGO_PATH ? `<img src="../${LOGO_PATH}" alt="" style="float:left;width:52px;height:52px;object-fit:contain;margin-right:8px">` : ""}<b>Bombay Hardware and Electricals</b><br>4M/20, Bhootnath Road, Patna, 800026<br>Phone: ${esc(cfg.phone || "")}${cfg.email ? "<br>Email: " + esc(cfg.email) : ""}<br>GSTIN: ${esc(cfg.gstin || "–")}<br>State: ${esc(cfg.state || "Bihar")}</td>
+    <td><b>Invoice No:</b> ${esc(o.id)}<br><b>Date:</b> ${esc(String(o.when || "").split(",")[0])}<br><b>Place of Supply:</b> ${esc(cfg.state || "Bihar")}</td></tr></table>
+    <table class="g"><tr><td><b>Bill To:</b><br><b>${esc(o.name)}</b><br>${o.address ? esc(o.address) + "<br>" : ""}Contact No: ${esc(o.phone)}<br>GSTIN: –<br>State: ${esc(cfg.state || "Bihar")}</td></tr></table>
+    <table class="g items"><tr><th>#</th><th>Item name</th><th>HSN/SAC</th><th>Quantity</th><th>Unit</th><th>Price/Unit (₹)</th><th>GST (₹)</th><th>Amount (₹)</th></tr>
+    ${rows}
+    <tr class="tot"><td></td><td style="text-align:left"><b>Total</b></td><td></td><td class="r"><b>${calc.reduce((s, l) => s + l.qty, 0)}</b></td><td></td><td></td><td class="r"><b>₹ ${f(sumTax)}</b></td><td class="r"><b>₹ ${f(total)}</b></td></tr></table>
+    <table class="g"><tr><td style="width:55%">Sub Total: <b>₹ ${f(total)}</b></td><td><b>Total: ₹ ${f(total)}</b> (${esc(inWords(total))} Rupees only)</td></tr>
+    <tr><td>Received: <b>₹ ${f(received)}</b></td><td>Balance: <b>₹ ${f(balance)}</b></td></tr></table>
+    <table class="g"><tr><th rowspan="2">HSN/SAC</th><th rowspan="2">Taxable amount (₹)</th><th colspan="2">CGST</th><th colspan="2">SGST</th><th rowspan="2">Total tax (₹)</th><th rowspan="2">Payment mode</th></tr>
+    <tr><th>Rate (%)</th><th>Amt (₹)</th><th>Rate (%)</th><th>Amt (₹)</th></tr>
+    ${sumHtml}
+    <tr class="tot"><td><b>TOTAL</b></td><td class="r"><b>${f(sumTaxable)}</b></td><td></td><td class="r"><b>${f(sumCg)}</b></td><td></td><td class="r"><b>${f(sumSg)}</b></td><td class="r"><b>${f(sumTax)}</b></td><td class="c"><b>${esc(pay)}</b></td></tr></table>
+    <table class="g"><tr><td style="height:70px;vertical-align:top;width:55%"><b>Terms and conditions</b><br>Thanks for doing business with us!</td><td style="vertical-align:bottom;text-align:center"><b>For Bombay Hardware and Electricals</b><br><br><br>Authorized Signatory</td></tr></table>
+    <p class="foot">${esc(cfg.url || "")}</p></div>`;
+  $("#printArea").hidden = false; window.print(); setTimeout(() => $("#printArea").hidden = true, 300);
+}
+function renderOrders() {
+  const q = $("#oQ").value.trim().toLowerCase(), st = $("#oStatus").value;
+  const fl = $("#oFlag").value;
+  const shown = ORDERS.filter(o => (!st || o.status === st) && (!fl || (fl === "flag" ? !!o.flags : !!o.adminFlag)) && (!q || [o.name, o.phone, o.id].join(" ").toLowerCase().includes(q)));
+  $("#oList").innerHTML = shown.map(orderCard).join("") || `<li class="mut">No orders match.</li>`;
+  const unseen = SEEN ? ORDERS.filter(o => !SEEN.has(o.id)).length : 0;
+  $("#tabOrders").textContent = unseen ? `Orders (${unseen} new)` : "Orders";
+  $("#oMsg").innerHTML = `<p class="mut" style="margin:0 0 8px">${shown.length} of ${ORDERS.length} orders</p>`;
+}
+async function openOrders() {
+  document.title = "Shop Admin";
+  $("#oMsg").innerHTML = `<p class="mut">Loading orders…</p>`;
+  try { ORDERS = await ordersApi(); SEEN = new Set(ORDERS.map(o => o.id)); $("#newBanner").hidden = true; renderOrders(); }
+  catch (x) { $("#oList").innerHTML = ""; $("#oMsg").innerHTML = `<div class="note er">${esc(x.message)}</div>` }
+}
+$("#tabOrders").onclick = () => showView("orders");
+$("#tabProducts").onclick = () => showView("products");
+document.addEventListener("keydown", e => {
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || document.querySelector("dialog[open]")) return;
+  if (e.key === "/") { e.preventDefault(); showView("products"); $("#q").focus(); }
+  else if (e.key === "o") showView("orders");
+  else if (e.key === "p") showView("products");
+  else if (e.key === "n") { showView("products"); openEdit(null); }
+});
+$("#newBanner").onclick = () => showView("orders");
+function showView(v) {
+  VIEW = v;
+  $("#viewOrders").hidden = v !== "orders"; $("#viewProducts").hidden = v !== "products"; $("#q").hidden = v !== "products";
+  document.querySelectorAll(".tab").forEach(t => t.classList.toggle("on", t.dataset.view === v));
+  if (v === "products") { $("#bar").hidden = !counts().total; render(); } else { $("#bar").hidden = true; openOrders(); }
+}
+$("#oRef").onclick = openOrders;
+$("#bNotify").onclick = async () => {
+  if (!("Notification" in window)) return alert("This browser does not support notifications. The page will still show new orders with a sound and a banner.");
+  const p = await Notification.requestPermission(); notifyButton(p);
+};
+function notifyButton(p) {
+  const b = $("#bNotify"); b.textContent = p === "granted" ? "Order alerts on" : p === "denied" ? "Alerts blocked in browser settings" : "Turn on order alerts";
+  b.disabled = p === "denied";
+}
+$("#oQ").oninput = renderOrders; $("#oStatus").onchange = renderOrders; $("#oFlag").onchange = renderOrders;
+$("#oList").onclick = async e => {
+  const pr = e.target.closest("[data-print]");
+  if (pr) { const o = ORDERS.find(x => x.id === pr.dataset.print); if (!o) return; printSlip(o); return }
+  const mb = e.target.closest("[data-mark]"); if (!mb) return;
+  try { await ordersApi({ action: "mark", id: mb.dataset.oid, mark: mb.dataset.mark }); const o = ORDERS.find(x => x.id === mb.dataset.oid); if (o) o.adminFlag = mb.dataset.mark; renderOrders(); }
+  catch (x) { alert("Could not update: " + x.message); await openOrders(); }
+};
+$("#oList").onchange = async e => {
+  if (e.target.dataset.pay) {
+    const id = e.target.dataset.pay, v = e.target.value === "Not paid" ? "" : e.target.value;
+    try { await ordersApi({ action: "pay", id, payment: v }); const o = ORDERS.find(x => x.id === id); if (o) o.payment = v; renderOrders(); }
+    catch (x) { alert("Could not update: " + x.message); await openOrders(); }
+    return;
+  }
+  const id = e.target.dataset.oid; if (!id) return;
+  try { await ordersApi({ action: "status", id, status: e.target.value }); const o = ORDERS.find(x => x.id === id); if (o) o.status = e.target.value; renderOrders(); }
+  catch (x) { alert("Could not update: " + x.message); await openOrders(); }
+};
+$("#oExp").onclick = () => {
+  const cols = ["Order ID", "Date", "Name", "Phone", "Delivery", "Address", "Items", "Total", "Status", "Check flags", "Admin flag"];
+  const csv = [cols.join(",")].concat(ORDERS.map(o => [o.id, o.when, o.name, o.phone, o.mode, o.address, o.items, o.total, o.status, o.flags, o.adminFlag].map(csvEsc).join(","))).join("\r\n");
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8" })); a.download = "orders.csv"; a.click();
+};
+
+addEventListener("beforeunload", e => { if (counts().total) { e.preventDefault(); e.returnValue = "" } });
+/* password visibility toggles */
+function addEyes() {
+  document.querySelectorAll('input[type="password"]').forEach(inp => {
+    if (inp.parentElement.classList.contains("pwwrap")) return;
+    const w = document.createElement("div"); w.className = "pwwrap";
+    inp.parentNode.insertBefore(w, inp); w.appendChild(inp);
+    const b = document.createElement("button"); b.type = "button"; b.className = "eye"; b.textContent = "Show"; b.setAttribute("aria-label", "Show password");
+    b.onclick = () => { const show = inp.type === "password"; inp.type = show ? "text" : "password"; b.textContent = show ? "Hide" : "Show"; b.setAttribute("aria-label", show ? "Hide password" : "Show password") };
+    w.appendChild(b);
+  });
+}
+addEyes();
+
+/* forgot password: code by email (EmailJS, settings in mail.json), then a new token and password */
+let OTP = null, OTP_EXP = 0, OTP_TRIES = 0, OTP_OK = false;
+const fgMsg = (t, m) => { $("#fgMsg").innerHTML = m ? `<div class="note ${t}">${m}</div>` : "" };
+function fgStep(n) { ["#fgStep1", "#fgStep2", "#fgStep3"].forEach((id, i) => $(id).hidden = i !== n - 1) }
+function showForgot() { showOnly("#auth"); $("#loginBox").hidden = true; $("#setupBox").hidden = true; $("#forgotBox").hidden = false; OTP = null; OTP_OK = false; fgStep(1); fgMsg("", "") }
+$("#lForgot").onclick = showForgot;
+$("#fgBack").onclick = () => { $("#forgotBox").hidden = true; showLogin() };
+$("#fgSend").onclick = async () => {
+  fgMsg("", "");
+  const m = await fetch(new URL("mail.json", location.href), { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null);
+  if (!m || !m.service_id || !m.template_id || !m.public_key) return fgMsg("er", "Email reset is not set up yet. The shop owner must add the EmailJS settings to mail.json.");
+  const code = String(100000 + (crypto.getRandomValues(new Uint32Array(1))[0] % 900000));
+  $("#fgSend").disabled = true;
+  const r = await fetch("https://api.emailjs.com/api/v1.0/email/send", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ service_id: m.service_id, template_id: m.template_id, user_id: m.public_key, template_params: { otp: code, shop: SHOP, time: new Date().toLocaleString("en-IN") } }) }).catch(() => null);
+  $("#fgSend").disabled = false;
+  if (!r || !r.ok) return fgMsg("er", "Could not send the code. Check the internet connection and the email settings.");
+  OTP = code; OTP_EXP = Date.now() + 10 * 60 * 1000; OTP_TRIES = 0; OTP_OK = false; fgStep(2);
+  fgMsg("ok", "A 6-digit code was sent to the admin email. It expires in 10 minutes.");
+};
+$("#fgCheck").onclick = () => {
+  if (!OTP || Date.now() > OTP_EXP) return fgMsg("er", "The code has expired. Send a new code.");
+  if (++OTP_TRIES > 5) { OTP = null; return fgMsg("er", "Too many wrong attempts. Send a new code.") }
+  if ($("#fgCode").value.trim() !== OTP) return fgMsg("er", "That code is not correct.");
+  OTP_OK = true; fgStep(3); fgMsg("ok", "Code confirmed. Now enter a new GitHub token and password.");
+};
+$("#fgReset").onclick = async () => {
+  if (!OTP_OK) return fgMsg("er", "Confirm the code first.");
+  const repo = $("#fgRepo").value.trim().replace(/^https?:\/\/github\.com\//, "").replace(/\/$/, ""), branch = $("#fgBranch").value.trim() || "main";
+  const token = $("#fgTok").value.trim(), pw = $("#fgPw").value, pw2 = $("#fgPw2").value;
+  if (!/^[\w.-]+\/[\w.-]+$/.test(repo)) return fgMsg("er", "Repository must look like owner/name");
+  if (!token) return fgMsg("er", "Enter a GitHub token");
+  if (pw.length < 12) return fgMsg("er", "Password must be at least 12 characters");
+  if (pw !== pw2) return fgMsg("er", "The two passwords do not match");
+  $("#fgReset").disabled = true;
+  try {
+    CFG = { repo, branch, token }; await gh(`/repos/${repo}`);
+    await commit([{ path: "manage-x7k2q9/vault.json", text: await seal({ repo, branch, token }, pw) }], "Admin: password reset");
+    CFG = null; OTP = null; OTP_OK = false;
+    $("#forgotBox").hidden = true; showLogin();
+    $("#lErr").innerHTML = `<div class="note ok">Password reset. Log in with the new password, and delete the old GitHub token on GitHub.</div>`;
+  } catch (x) { CFG = null; fgMsg("er", esc(x.message)) }
+  finally { $("#fgReset").disabled = false }
+};
+
+start();
+</script></body></html>

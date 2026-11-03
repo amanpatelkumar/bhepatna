@@ -1,0 +1,98 @@
+<section id="catalog" class="max-w-7xl mx-auto px-3 sm:px-4 pt-1 pb-20">
+      <!-- Single-Row Swipeable Colourful Category Strip on Mobile, 7-Col Grid on Desktop -->
+      <div id="tabs" class="hide-sb flex overflow-x-auto gap-2 pb-2 lg:grid lg:grid-cols-7" role="tablist" aria-label="Product categories"></div>
+
+      <!-- Combined Single-Row Space Filter + Expandable [📐 Size Finder ▾] Toggle Bar -->
+      <div class="mt-1.5 flex items-center gap-1.5 overflow-x-auto hide-sb py-1">
+        <button id="calcToggleBtn" type="button" aria-expanded="false" class="shrink-0 inline-flex items-center gap-1 bg-gradient-to-r from-amber-400 to-orange-400 text-slate-950 text-xs font-extrabold rounded-full px-3 py-1.5 shadow-2xs">
+          <span>📐 Size Finder</span>
+          <span id="calcCaret" class="text-[10px] transition-transform">▾</span>
+        </button>
+        <span class="text-slate-300 text-xs">|</span>
+        <button type="button" data-room="bedroom" class="room-pill shrink-0 bg-white hover:bg-blue-50 border border-line text-slate-700 text-xs font-bold rounded-full px-3 py-1.5 transition-all">🛏️ Bedroom</button>
+        <button type="button" data-room="hall" class="room-pill shrink-0 bg-white hover:bg-blue-50 border border-line text-slate-700 text-xs font-bold rounded-full px-3 py-1.5 transition-all">🛋️ Living Hall</button>
+        <button type="button" data-room="kitchen" class="room-pill shrink-0 bg-white hover:bg-blue-50 border border-line text-slate-700 text-xs font-bold rounded-full px-3 py-1.5 transition-all">🍳 Kitchen</button>
+        <button type="button" data-room="winter" class="room-pill shrink-0 bg-white hover:bg-blue-50 border border-line text-slate-700 text-xs font-bold rounded-full px-3 py-1.5 transition-all">🚿 Bathroom</button>
+        <button type="button" data-room="wiring" class="room-pill shrink-0 bg-white hover:bg-blue-50 border border-line text-slate-700 text-xs font-bold rounded-full px-3 py-1.5 transition-all">⚡ House Wiring</button>
+      </div>
+
+      <!-- Collapsible Room Size Recommender Panel (Hidden by Default for Zero Vertical Bloat) -->
+      <div id="calcBox" class="hidden mt-2 bg-gradient-to-r from-amber-50 via-orange-50 to-yellow-50 border-2 border-amber-300 rounded-2xl p-3.5 shadow-soft">
+        <div class="flex items-center justify-between gap-2 mb-2.5">
+          <div class="text-xs font-extrabold text-ink">📐 Tap your room size or load to filter recommended specs:</div>
+          <button id="calcCloseBtn" type="button" class="text-[11px] font-bold text-slate-600 hover:text-ink bg-white border border-amber-300 rounded-full px-2.5 py-0.5">Close ✕</button>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-2" id="calcOptions"></div>
+      </div>
+
+      <!-- Compact Single-Row Swipeable Brand Pill Bar -->
+      <div class="mt-1.5 flex items-center gap-1.5 overflow-x-auto hide-sb py-1">
+        <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 shrink-0 pl-1">Brands:</span>
+        <button id="brandResetTop" type="button" class="hidden shrink-0 text-[11px] font-extrabold text-blue-600 bg-blue-50 border border-blue-200 rounded-full px-2.5 py-1">All Brands ✕</button>
+        <div id="brandStrip" class="flex gap-1.5 shrink-0"></div>
+      </div>
+
+      <div class="mt-2.5 flex gap-5 items-start">
+        <!-- Mobile Filter Backdrop -->
+        <div id="fOverlay" class="fixed inset-0 z-40 bg-ink/50 backdrop-blur-xs hidden lg:hidden"></div>
+
+        <!-- Desktop Sidebar / Mobile Bottom-Sheet Filter Panel -->
+        <aside id="fpanel" class="slide fixed inset-x-0 bottom-0 z-50 max-h-[84vh] overflow-y-auto bg-white rounded-t-3xl p-5 translate-y-full lg:translate-y-0 lg:sticky lg:left-auto lg:right-auto lg:bottom-auto lg:top-20 lg:z-10 lg:w-60 lg:shrink-0 lg:max-h-[calc(100vh-6rem)] lg:rounded-2xl lg:border lg:border-line lg:p-4 shadow-soft" aria-label="Filters">
+          <div class="flex items-center justify-between mb-3 pb-2 border-b border-line">
+            <h3 class="font-extrabold text-sm tracking-tight flex items-center gap-1.5 text-ink">
+              <span class="text-blue-600" data-i="filter" data-s="15"></span>Filters
+            </h3>
+            <div class="flex items-center gap-3">
+              <button id="fClear" type="button" class="text-xs font-bold text-blue-600 hover:text-blue-800 underline">Reset all</button>
+              <button id="fClose" type="button" class="lg:hidden w-8 h-8 grid place-items-center rounded-full hover:bg-stone" aria-label="Close filters">
+                <span data-i="x" data-s="18"></span>
+              </button>
+            </div>
+          </div>
+          <div id="fbody"></div>
+          <button id="fApply" type="button" class="lg:hidden mt-4 w-full bg-blue-600 text-white font-bold rounded-xl py-3">Show matching items</button>
+        </aside>
+
+        <!-- Product Listing Area -->
+        <div class="flex-1 min-w-0">
+          <!-- Compact Toolbar: Heading + Count + Mobile Filter Trigger + Active Chips + Sort -->
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3 bg-white border border-line rounded-xl px-3 py-2 shadow-2xs">
+            <div class="flex items-center gap-2 min-w-0">
+              <button id="fOpen" type="button" class="lg:hidden shrink-0 inline-flex items-center gap-1.5 bg-blue-50 text-blue-800 border border-blue-200 rounded-full px-3 py-1 text-xs font-extrabold">
+                <span data-i="filter" data-s="13"></span>Filter
+                <span id="fBadge" class="hidden bg-blue-600 text-white text-[10px] rounded-full px-1.5">0</span>
+              </button>
+              <h2 id="shopTitle" class="text-sm sm:text-lg font-extrabold tracking-tight text-ink truncate">All Appliances</h2>
+              <span id="resultInfo" class="text-[11px] font-mono font-bold text-blue-700 bg-blue-50 border border-blue-200 rounded-full px-2 py-0.5 shrink-0"></span>
+            </div>
+
+            <div class="flex items-center gap-2 ml-auto">
+              <div id="chips" class="hide-sb hidden sm:flex gap-1.5 overflow-x-auto max-w-xs"></div>
+              <select id="sort" class="border border-line rounded-full px-2.5 py-1 text-xs font-bold text-ink bg-slate-50 hover:border-blue-400 cursor-pointer" aria-label="Sort products">
+                <option value="feat">Sort: Featured</option>
+                <option value="plh">Price: Low → High</option>
+                <option value="phl">Price: High → Low</option>
+                <option value="disc">Biggest % Off</option>
+                <option value="save">Most ₹ Saved</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Mobile Active Filter Chips Row (Only shown when filters active) -->
+          <div id="chipsMobile" class="hide-sb flex sm:hidden gap-1.5 overflow-x-auto mb-2.5 empty:hidden"></div>
+
+          <!-- Responsive Product Grid: 2 Columns on Mobile so products are compact & scannable -->
+          <div id="grid" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-3.5"></div>
+
+          <!-- Show More Button -->
+          <div class="text-center mt-7">
+            <button id="more" type="button" class="hidden bg-white border-2 border-blue-600 text-blue-700 hover:bg-blue-600 hover:text-white rounded-full px-7 py-2.5 text-xs sm:text-sm font-extrabold shadow-xs transition-all">
+              Show More Appliances
+            </button>
+          </div>
+
+          <!-- Empty State -->
+          <div id="empty" class="hidden bg-white border border-line rounded-2xl text-center py-12 px-4 text-slate-500 text-sm shadow-soft"></div>
+        </div>
+      </div>
+    </section>

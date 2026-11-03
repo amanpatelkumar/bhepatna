@@ -1,0 +1,9 @@
+{
+  "name": "bombay-hardware-site",
+  "private": true,
+  "scripts": {
+    "pages": "node build.mjs",
+    "build": "node build.mjs && tailwindcss -c tailwind.config.cjs -i src/input.css -o assets/css/tailwind.css --minify && node build.mjs"
+  },
+  "devDependencies": { "tailwindcss": "3.4.17" }
+}

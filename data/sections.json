@@ -1,0 +1,119 @@
+[
+ {
+  "id": "fans",
+  "label": "Fans",
+  "i": "fan",
+  "legacy": "fans",
+  "blurb": "Ceiling, pedestal, table, wall and kitchen exhaust fans from Crompton, Havells, Bajaj, Orient and Usha with 2-year brand warranty.",
+  "col": [
+   "#0284C7",
+   "#E0F2FE",
+   "#38BDF8"
+  ],
+  "hsn": "8414"
+ },
+ {
+  "id": "air-coolers",
+  "label": "Air Coolers",
+  "i": "snow",
+  "legacy": "coolers",
+  "blurb": "Personal, tower and desert air coolers from Crompton, Bajaj, Symphony and Havells, inverter ready for Bihar summers.",
+  "col": [
+   "#0D9488",
+   "#CCFBF1",
+   "#2DD4BF"
+  ],
+  "hsn": "8414"
+ },
+ {
+  "id": "mixers",
+  "label": "Mixer Grinders",
+  "i": "mixer",
+  "legacy": "mixer",
+  "blurb": "Stainless steel jar mixer grinders and juicer mixers from Prestige, Bajaj, Philips and Havells.",
+  "col": [
+   "#EA580C",
+   "#FFEDD5",
+   "#FB923C"
+  ],
+  "hsn": "8509"
+ },
+ {
+  "id": "induction",
+  "label": "Induction Cooktops",
+  "i": "pot",
+  "legacy": "induction",
+  "blurb": "Push-button and touch panel induction cooktops with Indian preset menus from Prestige, Bajaj, Philips and Havells.",
+  "col": [
+   "#E11D48",
+   "#FFE4E6",
+   "#FB7185"
+  ],
+  "hsn": "8516"
+ },
+ {
+  "id": "irons",
+  "label": "Irons",
+  "i": "layers",
+  "legacy": "iron",
+  "blurb": "Non-stick dry and steam irons from Philips, Bajaj, Havells and Usha.",
+  "col": [
+   "#7C3AED",
+   "#EDE9FE",
+   "#A78BFA"
+  ],
+  "hsn": "8516"
+ },
+ {
+  "id": "geysers",
+  "label": "Geysers",
+  "i": "shield",
+  "legacy": "iron",
+  "blurb": "Instant and storage water heaters (3L to 25L), anti-rust tanks, BEE 5-star, from Bajaj, Havells, Crompton and Racold.",
+  "col": [
+   "#7C3AED",
+   "#EDE9FE",
+   "#A78BFA"
+  ],
+  "hsn": "8516"
+ },
+ {
+  "id": "wires",
+  "label": "Wires",
+  "i": "plug",
+  "legacy": "elec",
+  "blurb": "FR insulated copper house wire coils (90m) from Polycab, Havells and Finolex, with ISI mark and GST bill.",
+  "col": [
+   "#D97706",
+   "#FEF3C7",
+   "#FBBF24"
+  ],
+  "hsn": "8544"
+ },
+ {
+  "id": "led",
+  "label": "LED Lights",
+  "i": "zap",
+  "legacy": "elec",
+  "blurb": "Cool daylight LED bulbs and battens from Philips, Havells, Syska and Crompton.",
+  "col": [
+   "#D97706",
+   "#FEF3C7",
+   "#FBBF24"
+  ],
+  "hsn": "8539"
+ },
+ {
+  "id": "switches",
+  "label": "Modular Switches",
+  "i": "all",
+  "legacy": "elec",
+  "blurb": "Fire-retardant modular switches and sockets from Havells, Anchor and Legrand.",
+  "col": [
+   "#D97706",
+   "#FEF3C7",
+   "#FBBF24"
+  ],
+  "hsn": "8536"
+ }
+]

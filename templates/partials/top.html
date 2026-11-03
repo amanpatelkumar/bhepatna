@@ -1,0 +1,52 @@
+<body class="min-h-screen flex flex-col">
+
+  <!-- Concise Single-Line Top Promo Ticker -->
+  <div class="bg-gradient-to-r from-indigo-950 via-blue-900 to-indigo-950 text-white text-[11px] sm:text-xs border-b border-white/15">
+    <div class="max-w-7xl mx-auto px-3 sm:px-4 py-1.5 flex items-center justify-between gap-2 overflow-hidden">
+      <p class="truncate font-medium text-blue-100">
+        ⚡ <strong class="text-amber-300 font-bold">Same-Day Delivery</strong> in Bhootnath Rd &amp; Kankarbagh • <strong class="text-white">GST Bill &amp; Brand Warranty</strong>
+      </p>
+      <span class="hidden sm:inline-flex items-center gap-1.5 shrink-0 text-emerald-300 font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Open 9:30 AM – 9 PM
+      </span>
+    </div>
+  </div>
+
+  <!-- Compact Sticky Header -->
+  <header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-line shadow-xs">
+    <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-2.5 flex flex-wrap items-center gap-2">
+      <!-- Brand Identity -->
+      <a href="{{BASE}}index.html" class="flex items-center gap-2 sm:gap-2.5 mr-auto lg:mr-0 group">
+        <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-amber-500 text-white grid place-items-center shadow-xs shrink-0" data-i="zap" data-s="19"></span>
+        <span class="leading-tight">
+          <span class="block font-extrabold text-[14px] sm:text-base tracking-tight text-ink">Bombay Hardware &amp; Electricals</span>
+          <span class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold text-blue-700">
+            <span class="text-blue-600" data-i="pin" data-s="10"></span>Bhootnath Road, Patna
+          </span>
+        </span>
+      </a>
+
+      <!-- Header Right Controls -->
+      <div class="lg:order-last flex items-center gap-1.5 sm:gap-2">
+        <button id="savedBtn" type="button" class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-line bg-white grid place-items-center hover:border-rose-400 hover:bg-rose-50 transition-colors" aria-label="Saved items" aria-pressed="false" title="Saved items">
+          <span data-i="heart" data-s="16"></span>
+          <span id="savedCount" class="hidden absolute -top-1 -right-1 bg-rose-600 text-white text-[10px] font-bold min-w-[17px] h-[17px] rounded-full grid place-items-center px-1 shadow">0</span>
+        </button>
+        <button id="cartBtn" type="button" class="flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white rounded-full pl-3 pr-3.5 h-9 sm:h-10 text-xs sm:text-sm font-bold shadow-xs transition-all" aria-label="Open shopping bag">
+          <span data-i="bag" data-s="16"></span>
+          <span id="cartCount" class="font-mono text-[11px] bg-white/20 rounded-full px-1.5 py-0.2">0</span>
+          <span class="w-px h-3.5 bg-white/30"></span>
+          <span id="cartTotal" class="font-mono text-xs">₹0</span>
+        </button>
+      </div>
+
+      <!-- Compact Search Bar -->
+      <div id="sw" class="relative w-full lg:w-auto lg:flex-1 lg:max-w-lg lg:mx-auto order-last lg:order-none">
+        <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-600 pointer-events-none" data-i="search" data-s="16"></span>
+        <input id="search" type="search" autocomplete="off" placeholder="Search fans, coolers, mixers, geysers, wires..." class="w-full bg-slate-100 rounded-full pl-9 pr-16 h-9 sm:h-10 text-xs sm:text-sm font-medium placeholder:text-slate-400 border border-transparent focus:bg-white focus:border-blue-600 transition-all" aria-label="Search products">
+        <button id="clearSearchBtn" type="button" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-[11px] font-bold text-slate-600 hover:text-ink bg-white border border-line rounded-full px-2 py-0.5">Clear</button>
+        <kbd id="slashHint" class="hidden sm:inline-grid place-items-center absolute right-3 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-400 bg-white border border-line rounded px-1.5 py-0.5 pointer-events-none">/</kbd>
+        <div id="sugg" class="hidden absolute left-0 right-0 top-11 bg-white border border-line rounded-2xl shadow-2xl overflow-hidden z-40"></div>
+      </div>
+    </div>
+  {{NAV}}</header>

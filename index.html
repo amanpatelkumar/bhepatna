@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Bombay Hardware &amp; Electricals – Bhootnath Road, Patna</title>
+  <meta name="description" content="Branded fans, air coolers, mixer grinders, induction cooktops, irons, geysers, wires, LED lights and switches in Bhootnath Road, Patna. GST bill, brand warranty, same-day delivery.">
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%232563EB%22%2F%3E%3Cpath%20d%3D%22M18%205%208%2018h7l-1%209%2010-13h-7z%22%20fill%3D%22%23FBBF24%22%2F%3E%3C%2Fsvg%3E"><meta name="theme-color" content="#1E3A8A"><meta property="og:type" content="website"><meta property="og:site_name" content="Bombay Hardware & Electricals"><meta property="og:title" content="Bombay Hardware &amp; Electricals – Bhootnath Road, Patna"><meta property="og:description" content="Branded fans, air coolers, mixer grinders, induction cooktops, irons, geysers, wires, LED lights and switches in Bhootnath Road, Patna. GST bill, brand warranty, same-day delivery."><meta name="twitter:card" content="summary"><script type="application/ld+json">{"@context":"https://schema.org","@type":"HardwareStore","name":"Bombay Hardware & Electricals","address":{"@type":"PostalAddress","streetAddress":"Bhootnath Road","addressLocality":"Patna","addressRegion":"Bihar","postalCode":"800026","addressCountry":"IN"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:30","closes":"21:00"}}</script><style>#calcToggleBtn,#calcBox{display:none!important}</style></head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Concise Single-Line Top Promo Ticker -->
+  <div class="bg-gradient-to-r from-indigo-950 via-blue-900 to-indigo-950 text-white text-[11px] sm:text-xs border-b border-white/15">
+    <div class="max-w-7xl mx-auto px-3 sm:px-4 py-1.5 flex items-center justify-between gap-2 overflow-hidden">
+      <p class="truncate font-medium text-blue-100">
+        ⚡ <strong class="text-amber-300 font-bold">Same-Day Delivery</strong> in Bhootnath Rd &amp; Kankarbagh • <strong class="text-white">GST Bill &amp; Brand Warranty</strong>
+      </p>
+      <span class="hidden sm:inline-flex items-center gap-1.5 shrink-0 text-emerald-300 font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Open 9:30 AM – 9 PM
+      </span>
+    </div>
+  </div>
+
+  <!-- Compact Sticky Header -->
+  <header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-line shadow-xs">
+    <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-2.5 flex flex-wrap items-center gap-2">
+      <!-- Brand Identity -->
+      <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 mr-auto lg:mr-0 group">
+        <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-amber-500 text-white grid place-items-center shadow-xs shrink-0" data-i="zap" data-s="19"></span>
+        <span class="leading-tight">
+          <span class="block font-extrabold text-[14px] sm:text-base tracking-tight text-ink">Bombay Hardware &amp; Electricals</span>
+          <span class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold text-blue-700">
+            <span class="text-blue-600" data-i="pin" data-s="10"></span>Bhootnath Road, Patna
+          </span>
+        </span>
+      </a>
+
+      <!-- Header Right Controls -->
+      <div class="lg:order-last flex items-center gap-1.5 sm:gap-2">
+        <button id="savedBtn" type="button" class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-line bg-white grid place-items-center hover:border-rose-400 hover:bg-rose-50 transition-colors" aria-label="Saved items" aria-pressed="false" title="Saved items">
+          <span data-i="heart" data-s="16"></span>
+          <span id="savedCount" class="hidden absolute -top-1 -right-1 bg-rose-600 text-white text-[10px] font-bold min-w-[17px] h-[17px] rounded-full grid place-items-center px-1 shadow">0</span>
+        </button>
+        <button id="cartBtn" type="button" class="flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white rounded-full pl-3 pr-3.5 h-9 sm:h-10 text-xs sm:text-sm font-bold shadow-xs transition-all" aria-label="Open shopping bag">
+          <span data-i="bag" data-s="16"></span>
+          <span id="cartCount" class="font-mono text-[11px] bg-white/20 rounded-full px-1.5 py-0.2">0</span>
+          <span class="w-px h-3.5 bg-white/30"></span>
+          <span id="cartTotal" class="font-mono text-xs">₹0</span>
+        </button>
+      </div>
+
+      <!-- Compact Search Bar -->
+      <div id="sw" class="relative w-full lg:w-auto lg:flex-1 lg:max-w-lg lg:mx-auto order-last lg:order-none">
+        <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-600 pointer-events-none" data-i="search" data-s="16"></span>
+        <input id="search" type="search" autocomplete="off" placeholder="Search fans, coolers, mixers, geysers, wires..." class="w-full bg-slate-100 rounded-full pl-9 pr-16 h-9 sm:h-10 text-xs sm:text-sm font-medium placeholder:text-slate-400 border border-transparent focus:bg-white focus:border-blue-600 transition-all" aria-label="Search products">
+        <button id="clearSearchBtn" type="button" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-[11px] font-bold text-slate-600 hover:text-ink bg-white border border-line rounded-full px-2 py-0.5">Clear</button>
+        <kbd id="slashHint" class="hidden sm:inline-grid place-items-center absolute right-3 top-1/2 -translate-y-1/2 text-[10px] font-mono text-slate-400 bg-white border border-line rounded px-1.5 py-0.5 pointer-events-none">/</kbd>
+        <div id="sugg" class="hidden absolute left-0 right-0 top-11 bg-white border border-line rounded-2xl shadow-2xl overflow-hidden z-40"></div>
+      </div>
+    </div>
+  <nav aria-label="Shop by category" class="border-t border-line"><ul class="max-w-7xl mx-auto px-3 sm:px-4 hide-sb flex gap-1 overflow-x-auto py-1.5 text-[11px] sm:text-xs font-bold text-slate-700 whitespace-nowrap"><li><a href="index.html" class="shrink-0 block rounded-full px-3 py-1 transition-colors bg-blue-600 text-white" aria-current="page">Home</a></li><li><a href="products.html" class="shrink-0 block rounded-full px-3 py-1 transition-colors hover:bg-blue-50 hover:text-blue-700">All Products</a></li><li><a href="fans.html" class="shrink-0 block rounded-full px-3 py-1 transition-colors hover:bg-blue-50 hover:text-blue-700">Fans</a></li><li><a href="air-coolers.html" class="shrink-0 block rounded-full px-3 py-1 transition-colors hover:bg-blue-50 hover:text-blue-700">Air Coolers</a></li><li><a href="mixers.html" class="shrink-0 block rounded-full px-3 py-1 transition-colors hover:bg-blue-50 hover:text-blue-700">Mixer Grinders</a></li><li><a href="induction.html" class="shrink-0 block rounded-full px-3 py-1 transition-colors hover:bg-blue-50 hover:text-blue-700">Induction Cooktops</a></li><li><a href="irons.html" class="shrink-0 block rounded-full px-3 py-1 transition-colors hover:bg-blue-50 hover:text-blue-700">Irons</a></li><li><a href="geysers.html" class="shrink-0 block rounded-full px-3 py-1 transition-colors hover:bg-blue-50 hover:text-blue-700">Geysers</a></li><li><a href="wires.html" class="shrink-0 block rounded-full px-3 py-1 transition-colors hover:bg-blue-50 hover:text-blue-700">Wires</a></li><li><a href="led.html" class="shrink-0 block rounded-full px-3 py-1 transition-colors hover:bg-blue-50 hover:text-blue-700">LED Lights</a></li><li><a href="switches.html" class="shrink-0 block rounded-full px-3 py-1 transition-colors hover:bg-blue-50 hover:text-blue-700">Modular Switches</a></li><li><a href="brands.html" class="shrink-0 block rounded-full px-3 py-1 transition-colors hover:bg-blue-50 hover:text-blue-700">Brands</a></li></ul></nav></header>
+<main id="top" class="flex-1"><section id="front" class="max-w-7xl mx-auto px-3 sm:px-4 pt-2.5 sm:pt-4">
+      <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-900 text-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 shadow-glow relative overflow-hidden border border-blue-800/60">
+        <div class="pointer-events-none absolute -top-20 -left-20 w-56 h-56 rounded-full bg-blue-500/20 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-20 right-4 w-64 h-64 rounded-full bg-amber-500/15 blur-3xl"></div>
+
+        <div class="grid lg:grid-cols-12 gap-3 sm:gap-5 items-center relative z-10">
+          <!-- Left Headline + 2 Compact CTAs -->
+          <div class="lg:col-span-7 flex flex-col justify-between">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-extrabold bg-amber-400 text-slate-950 rounded-full px-2.5 py-0.5 shadow-2xs">
+                ★ Authorised Dealer • Bhootnath Rd
+              </span>
+              <span class="text-[10px] sm:text-xs font-semibold bg-white/10 text-blue-200 rounded-full px-2.5 py-0.5">
+                Up to 35% OFF MRP
+              </span>
+            </div>
+
+            <h1 class="mt-2 sm:mt-3 text-lg sm:text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight">
+              Fans, Coolers, Kitchen Appliances &amp; <span class="text-amber-300">Electricals</span>
+            </h1>
+
+            <p class="hidden sm:block mt-1.5 text-xs sm:text-sm text-blue-100/90 max-w-xl">Branded products with GST bill, brand warranty and same-day delivery in Bhootnath Road and Kankarbagh, Patna.</p>
+
+            <div class="mt-2.5 sm:mt-4 flex flex-wrap items-center gap-2">
+              <a href="products.html" class="bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-slate-950 text-xs sm:text-sm font-extrabold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow transition-all">
+                Shop Catalog ↓
+              </a>
+              <a data-wa data-wa href="#" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full inline-flex items-center gap-1.5 shadow transition-colors">
+                <span data-i="wa" data-s="14"></span>WhatsApp Us
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Compact Featured Deal Pill (Mobile) / Spotlight Card (Desktop) -->
+          <div class="lg:col-span-5">
+            <div id="heroSpotlight" class="bg-white text-ink rounded-xl sm:rounded-2xl p-2.5 sm:p-3.5 shadow-xl border border-white/30"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Single-Line Swipeable Trust Pill Strip -->
+      <div class="hide-sb flex gap-2 overflow-x-auto py-2 mt-1 text-[11px] sm:text-xs font-bold text-slate-700">
+        <div class="shrink-0 inline-flex items-center gap-1.5 bg-white border border-line rounded-full px-3 py-1.5 shadow-2xs">
+          <span class="text-emerald-600" data-i="shield" data-s="14"></span>
+          <span>100% Genuine + GST Bill</span>
+        </div>
+        <div class="shrink-0 inline-flex items-center gap-1.5 bg-white border border-line rounded-full px-3 py-1.5 shadow-2xs">
+          <span class="text-blue-600" data-i="truck" data-s="14"></span>
+          <span>Same-Day Patna Delivery</span>
+        </div>
+        <div class="shrink-0 inline-flex items-center gap-1.5 bg-white border border-line rounded-full px-3 py-1.5 shadow-2xs">
+          <span class="text-amber-600" data-i="award" data-s="14"></span>
+          <span>Havells • Crompton • Bajaj • Polycab</span>
+        </div>
+        <div class="shrink-0 inline-flex items-center gap-1.5 bg-white border border-line rounded-full px-3 py-1.5 shadow-2xs">
+          <span class="text-purple-600" data-i="store" data-s="14"></span>
+          <span>Open 9:30 AM – 9 PM</span>
+        </div>
+      </div>
+    </section><section id="heroSearch" class="max-w-7xl mx-auto px-3 sm:px-4 pt-3"><form role="search" action="products.html" method="get" class="flex gap-2"><input name="q" type="search" placeholder="What are you looking for? e.g. ceiling fan, geyser, wire" class="flex-1 min-w-0 rounded-xl border border-line bg-white px-4 py-3 text-sm sm:text-base outline-none focus:border-blue-400"><button class="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl px-4 sm:px-5 text-sm">Search</button></form><div class="flex flex-wrap items-center gap-2 mt-2 text-xs"><span class="text-slate-500 font-bold">Popular:</span><a href="products.html?q=Fan" class="bg-white border border-line rounded-full px-3 py-1 font-bold hover:border-blue-400">Fan</a><a href="products.html?q=Cooler" class="bg-white border border-line rounded-full px-3 py-1 font-bold hover:border-blue-400">Cooler</a><a href="products.html?q=Geyser" class="bg-white border border-line rounded-full px-3 py-1 font-bold hover:border-blue-400">Geyser</a><a href="products.html?q=LED" class="bg-white border border-line rounded-full px-3 py-1 font-bold hover:border-blue-400">LED</a><a href="products.html?q=Wire" class="bg-white border border-line rounded-full px-3 py-1 font-bold hover:border-blue-400">Wire</a><a href="products.html?q=Switch" class="bg-white border border-line rounded-full px-3 py-1 font-bold hover:border-blue-400">Switch</a><span id="visitNow" class="ml-auto font-bold"></span></div></section><section id="trust" class="max-w-7xl mx-auto px-3 sm:px-4 pt-3"><ul class="grid grid-cols-2 lg:grid-cols-4 gap-2 text-[11px] sm:text-xs font-bold text-slate-700"><li class="flex items-center gap-2 bg-white border border-line rounded-xl px-3 py-2"><span class="text-emerald-600">✔</span>GST bill for every purchase</li><li class="flex items-center gap-2 bg-white border border-line rounded-xl px-3 py-2"><span class="text-emerald-600">✔</span>Brand warranty on all products</li><li class="flex items-center gap-2 bg-white border border-line rounded-xl px-3 py-2"><span class="text-emerald-600">✔</span>Same-day delivery in Bhootnath Rd & Kankarbagh</li><li class="flex items-center gap-2 bg-white border border-line rounded-xl px-3 py-2"><span class="text-emerald-600">✔</span>Visit the showroom, open daily</li></ul></section><section class="max-w-7xl mx-auto px-3 sm:px-4 pt-3"><div class="flex items-center justify-between mb-2"><h2 class="text-sm sm:text-lg font-extrabold tracking-tight text-ink">Shop by Category</h2></div><div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-2"><a data-grp="fans" href="fans.html" class="card flex flex-col items-center gap-1.5 bg-white border border-line rounded-xl p-2.5 sm:p-3 text-center" style="--c:#0284C7"><span class="w-10 h-10 rounded-xl grid place-items-center text-white" style="background:linear-gradient(135deg, #0284C7 0%, #38BDF8 100%)" data-i="fan" data-s="20"></span><span class="font-extrabold text-[11px] sm:text-xs leading-tight text-ink">Fans</span><span class="text-[10px] font-mono text-slate-400">33 items</span></a><a data-grp="air-coolers" href="air-coolers.html" class="card flex flex-col items-center gap-1.5 bg-white border border-line rounded-xl p-2.5 sm:p-3 text-center" style="--c:#0D9488"><span class="w-10 h-10 rounded-xl grid place-items-center text-white" style="background:linear-gradient(135deg, #0D9488 0%, #2DD4BF 100%)" data-i="snow" data-s="20"></span><span class="font-extrabold text-[11px] sm:text-xs leading-tight text-ink">Air Coolers</span><span class="text-[10px] font-mono text-slate-400">12 items</span></a><a data-grp="mixers" href="mixers.html" class="card flex flex-col items-center gap-1.5 bg-white border border-line rounded-xl p-2.5 sm:p-3 text-center" style="--c:#EA580C"><span class="w-10 h-10 rounded-xl grid place-items-center text-white" style="background:linear-gradient(135deg, #EA580C 0%, #FB923C 100%)" data-i="mixer" data-s="20"></span><span class="font-extrabold text-[11px] sm:text-xs leading-tight text-ink">Mixer Grinders</span><span class="text-[10px] font-mono text-slate-400">12 items</span></a><a data-grp="induction" href="induction.html" class="card flex flex-col items-center gap-1.5 bg-white border border-line rounded-xl p-2.5 sm:p-3 text-center" style="--c:#E11D48"><span class="w-10 h-10 rounded-xl grid place-items-center text-white" style="background:linear-gradient(135deg, #E11D48 0%, #FB7185 100%)" data-i="pot" data-s="20"></span><span class="font-extrabold text-[11px] sm:text-xs leading-tight text-ink">Induction Cooktops</span><span class="text-[10px] font-mono text-slate-400">12 items</span></a><a data-grp="irons" href="irons.html" class="card flex flex-col items-center gap-1.5 bg-white border border-line rounded-xl p-2.5 sm:p-3 text-center" style="--c:#7C3AED"><span class="w-10 h-10 rounded-xl grid place-items-center text-white" style="background:linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%)" data-i="layers" data-s="20"></span><span class="font-extrabold text-[11px] sm:text-xs leading-tight text-ink">Irons</span><span class="text-[10px] font-mono text-slate-400">8 items</span></a><a data-grp="geysers" href="geysers.html" class="card flex flex-col items-center gap-1.5 bg-white border border-line rounded-xl p-2.5 sm:p-3 text-center" style="--c:#7C3AED"><span class="w-10 h-10 rounded-xl grid place-items-center text-white" style="background:linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%)" data-i="shield" data-s="20"></span><span class="font-extrabold text-[11px] sm:text-xs leading-tight text-ink">Geysers</span><span class="text-[10px] font-mono text-slate-400">12 items</span></a><a data-grp="wires" href="wires.html" class="card flex flex-col items-center gap-1.5 bg-white border border-line rounded-xl p-2.5 sm:p-3 text-center" style="--c:#D97706"><span class="w-10 h-10 rounded-xl grid place-items-center text-white" style="background:linear-gradient(135deg, #D97706 0%, #FBBF24 100%)" data-i="plug" data-s="20"></span><span class="font-extrabold text-[11px] sm:text-xs leading-tight text-ink">Wires</span><span class="text-[10px] font-mono text-slate-400">9 items</span></a><a data-grp="led" href="led.html" class="card flex flex-col items-center gap-1.5 bg-white border border-line rounded-xl p-2.5 sm:p-3 text-center" style="--c:#D97706"><span class="w-10 h-10 rounded-xl grid place-items-center text-white" style="background:linear-gradient(135deg, #D97706 0%, #FBBF24 100%)" data-i="zap" data-s="20"></span><span class="font-extrabold text-[11px] sm:text-xs leading-tight text-ink">LED Lights</span><span class="text-[10px] font-mono text-slate-400">12 items</span></a><a data-grp="switches" href="switches.html" class="card flex flex-col items-center gap-1.5 bg-white border border-line rounded-xl p-2.5 sm:p-3 text-center" style="--c:#D97706"><span class="w-10 h-10 rounded-xl grid place-items-center text-white" style="background:linear-gradient(135deg, #D97706 0%, #FBBF24 100%)" data-i="all" data-s="20"></span><span class="font-extrabold text-[11px] sm:text-xs leading-tight text-ink">Modular Switches</span><span class="text-[10px] font-mono text-slate-400">6 items</span></a></div></section><section class="max-w-7xl mx-auto px-3 sm:px-4 pt-4"><div class="flex items-center justify-between mb-2"><h2 class="text-sm sm:text-lg font-extrabold tracking-tight text-ink">Featured Products</h2><a href="products.html" class="text-xs font-bold text-blue-600 hover:underline">View all →</a></div><div id="rowFeatured" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-3.5"></div></section><section class="max-w-7xl mx-auto px-3 sm:px-4 pt-4"><div class="flex items-center justify-between mb-2"><h2 class="text-sm sm:text-lg font-extrabold tracking-tight text-ink">New Arrivals</h2></div><div id="rowNew" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-3.5"></div></section><section class="max-w-7xl mx-auto px-3 sm:px-4 pt-4"><div class="flex items-center justify-between mb-2"><h2 class="text-sm sm:text-lg font-extrabold tracking-tight text-ink">Biggest discounts right now</h2></div><div id="rowOffers" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-3.5"></div></section><section class="max-w-7xl mx-auto px-3 sm:px-4 pt-4"><div class="flex items-center justify-between mb-2"><h2 class="text-sm sm:text-lg font-extrabold tracking-tight text-ink">Shop by Brand</h2><a href="brands.html" class="text-xs font-bold text-blue-600 hover:underline">All brands →</a></div><div id="homeBrands" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2"><a href="brands/anchor.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Anchor</a><a href="brands/bajaj.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Bajaj</a><a href="brands/crompton.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Crompton</a><a href="brands/finolex.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Finolex</a><a href="brands/havells.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Havells</a><a href="brands/legrand.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Legrand</a><a href="brands/orient.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Orient</a><a href="brands/philips.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Philips</a><a href="brands/polycab.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Polycab</a><a href="brands/prestige.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Prestige</a><a href="brands/racold.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Racold</a><a href="brands/symphony.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Symphony</a><a href="brands/syska.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Syska</a><a href="brands/usha.html" class="bg-white border border-line rounded-xl px-3 py-2 text-sm font-bold">Usha</a></div></section><section id="faq" class="max-w-7xl mx-auto px-3 sm:px-4 pt-6"><h2 class="text-sm sm:text-lg font-extrabold tracking-tight text-ink mb-2">Questions customers ask</h2><div class="grid gap-2 md:grid-cols-2"><details class="bg-white border border-line rounded-xl px-4 py-3"><summary class="font-bold text-sm cursor-pointer text-ink">Do you deliver?</summary><p class="mt-2 text-sm text-slate-600">Yes, same-day delivery in Bhootnath Road and Kankarbagh. For other areas, ask us on WhatsApp.</p></details><details class="bg-white border border-line rounded-xl px-4 py-3"><summary class="font-bold text-sm cursor-pointer text-ink">Do products have warranty?</summary><p class="mt-2 text-sm text-slate-600">Every product carries a brand warranty. The warranty period is shown on each product page.</p></details><details class="bg-white border border-line rounded-xl px-4 py-3"><summary class="font-bold text-sm cursor-pointer text-ink">Do you give a GST bill?</summary><p class="mt-2 text-sm text-slate-600">Yes, a GST bill is given for every purchase.</p></details><details class="bg-white border border-line rounded-xl px-4 py-3"><summary class="font-bold text-sm cursor-pointer text-ink">Can I return a product?</summary><p class="mt-2 text-sm text-slate-600">Returns depend on the product and the brand's policy. Please contact the showroom before you buy.</p></details></div></section><section id="showroom" class="max-w-7xl mx-auto px-3 sm:px-4 pt-6"><div class="bg-white border border-line rounded-2xl p-4 sm:p-5 grid md:grid-cols-2 gap-4 items-center"><div><h2 class="text-sm sm:text-lg font-extrabold tracking-tight text-ink">Visit our showroom</h2><p class="mt-2 text-sm text-slate-700">Bombay Hardware &amp; Electricals<br>Bhootnath Road, Patna – 800026</p><p class="mt-1 text-sm text-slate-700" id="showHours">Open daily 9:30 AM – 9:00 PM</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Bombay+Hardware+and+Electricals+Bhootnath+Road+Patna+800026" target="_blank" rel="noopener" class="inline-block mt-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-xl px-4 py-2">Open in Google Maps</a></div><div class="relative rounded-xl overflow-hidden bg-slate-100 aspect-[4/3] flex items-center justify-center text-slate-400 text-sm"><span>Showroom photo</span><img src="assets/img/shop.jpg" alt="Bombay Hardware and Electricals showroom, Bhootnath Road" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()"></div></div></section><section id="reviews" hidden class="max-w-7xl mx-auto px-3 sm:px-4 pt-6 pb-16"><h2 class="text-sm sm:text-lg font-extrabold tracking-tight text-ink mb-2">What customers say</h2><div id="reviewList" class="grid gap-2 md:grid-cols-3"></div></section></main>
+
+  <!-- Floating Compare Tray (Up to 3 Items) -->
+  <div id="cmpBar" class="fixed bottom-3 inset-x-0 z-40 px-3 pointer-events-none hidden">
+    <div class="max-w-2xl mx-auto bg-slate-900/95 backdrop-blur-md text-white border border-white/15 rounded-2xl p-2.5 shadow-2xl pointer-events-auto flex items-center justify-between gap-2">
+      <div class="flex items-center gap-1.5 flex-1 min-w-0 overflow-x-auto hide-sb" id="cmpSlots"></div>
+      <div class="flex items-center gap-1.5 shrink-0">
+        <button id="cmpClear" type="button" class="text-[11px] font-semibold text-slate-300 hover:text-white px-2 py-1">Clear</button>
+        <button id="cmpOpen" type="button" class="bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-extrabold rounded-xl px-3.5 py-2 shadow">
+          Compare (<span id="cmpCount">0</span>)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compact Mobile-Friendly Store Footer -->
+  <footer class="bg-slate-950 text-slate-300 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 py-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-xs sm:text-sm">
+      <div>
+        <div class="flex items-center gap-2 text-white font-extrabold text-sm sm:text-base">
+          <span class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-amber-500 text-white grid place-items-center" data-i="zap" data-s="16"></span>
+          Bombay Hardware &amp; Electricals
+        </div>
+        <p class="mt-2 text-slate-400 text-xs leading-relaxed">
+          Authorised retailer for branded fans, coolers, kitchen appliances &amp; house wiring in Bhootnath Road, Kankarbagh &amp; Bhagwat Nagar.
+        </p>
+      </div>
+      <div class="space-y-1.5 text-xs">
+        <div class="font-extrabold uppercase tracking-wider text-amber-400">Showroom &amp; Hours</div>
+        <p class="flex gap-2 items-start"><span class="text-emerald-400 shrink-0 mt-0.5" data-i="pin" data-s="14"></span>Bhootnath Road, Patna - 800026</p>
+        <p class="flex gap-2 items-center"><span class="text-emerald-400 shrink-0" data-i="clock" data-s="14"></span><span id="shopHours">Open Daily: 9:30 AM – 9:00 PM</span> <span id="shopStatus" class="ml-2 font-bold text-emerald-400"></span></p>
+      </div>
+      <div class="flex flex-wrap sm:flex-col gap-2 items-start">
+        <a id="callBtn" href="#" class="inline-flex items-center gap-1.5 bg-white hover:bg-slate-100 text-slate-950 font-extrabold rounded-full px-4 py-2 text-xs transition-colors">
+          <span data-i="phone" data-s="14"></span>Call Showroom
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Bombay+Hardware+and+Electricals+Bhootnath+Road+Patna+800026" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 border border-slate-700 hover:border-white text-white font-bold rounded-full px-4 py-2 text-xs transition-colors">
+          <span data-i="pin" data-s="14"></span>Open in Google Maps
+        </a>
+      </div>
+    </div>
+    <div class="border-t border-white/10 text-center text-[11px] text-slate-500 py-3 px-4">
+      Indicative showroom prices. Final price &amp; stock are confirmed on WhatsApp.
+    </div>
+  </footer>
+
+  <!-- All-Visible Quick View Modal (Smooth Mobile Bottom Sheet) -->
+  <div id="qv" class="fixed inset-0 z-[60] hidden">
+    <div id="qvBg" class="absolute inset-0 bg-slate-950/65 backdrop-blur-xs"></div>
+    <div id="qvBody" class="absolute bottom-0 inset-x-0 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-[840px] max-w-[100vw] sm:max-w-[95vw] bg-white rounded-t-3xl sm:rounded-3xl max-h-[90vh] overflow-y-auto shadow-2xl border border-line" role="dialog" aria-modal="true" aria-label="Product details"></div>
+  </div>
+
+  <!-- Side-by-Side Comparison Modal -->
+  <div id="cmpModal" class="fixed inset-0 z-[65] hidden">
+    <div id="cmpBg" class="absolute inset-0 bg-slate-950/65 backdrop-blur-xs"></div>
+    <div id="cmpBody" class="absolute bottom-0 inset-x-0 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-[900px] max-w-[100vw] sm:max-w-[95vw] bg-white rounded-t-3xl sm:rounded-3xl max-h-[88vh] overflow-y-auto shadow-2xl border border-line p-4 sm:p-6" role="dialog" aria-modal="true" aria-label="Compare appliances"></div>
+  </div>
+
+  <!-- Shopping Bag Slide-Over Drawer -->
+  <div id="overlay" class="fixed inset-0 z-40 bg-slate-950/50 backdrop-blur-xs hidden"></div>
+  <aside id="drawer" class="slide fixed z-50 top-0 right-0 h-full w-full sm:w-[430px] bg-white shadow-2xl translate-x-full flex flex-col" aria-label="Shopping bag">
+    <div class="flex items-center justify-between px-4 sm:px-5 border-b border-line bg-gradient-to-r from-slate-900 to-blue-950 text-white" style="padding-top:calc(.75rem + env(safe-area-inset-top,0px));padding-bottom:.75rem">
+      <div>
+        <h2 class="font-extrabold text-base sm:text-lg">Your Shopping Bag</h2>
+        <p class="text-[11px] text-blue-200">GST bill &amp; brand warranty included</p>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <button id="clearBagBtn" type="button" class="hidden text-xs font-bold text-rose-300 hover:text-white px-2 py-1 rounded-full hover:bg-white/10">Empty</button>
+        <button id="closeCart" type="button" class="w-8 h-8 grid place-items-center rounded-full hover:bg-white/15 text-white" aria-label="Close bag">
+          <span data-i="x" data-s="18"></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="cartItems" class="flex-1 overflow-y-auto px-4 py-3 space-y-2.5 bg-slate-50"></div>
+
+    <div class="border-t border-line bg-white px-4 pt-3 space-y-2.5" style="padding-bottom:calc(.9rem + env(safe-area-inset-bottom,0px))">
+      <div class="grid grid-cols-2 bg-slate-100 border border-line rounded-full p-1 text-xs font-bold">
+        <button id="dHome" type="button" class="rounded-full py-1.5 transition-all">🚚 Home Delivery (Patna)</button>
+        <button id="dPick" type="button" class="rounded-full py-1.5 transition-all">🏪 Store Pickup (Bhootnath Rd)</button>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <input id="custName" type="text" placeholder="Your full name *" class="bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm font-medium focus:bg-white focus:border-blue-600" aria-label="Customer name">
+        <input id="custPhone" type="tel" inputmode="numeric" placeholder="10-digit mobile *" class="bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm font-medium focus:bg-white focus:border-blue-600" aria-label="Phone number">
+      </div>
+      <textarea id="addr" rows="2" placeholder="Landmark / Address (e.g. Near Swagat Banquet Hall, Bhagwat Nagar, Kankarbagh)" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-1.5 text-xs sm:text-sm font-medium focus:bg-white focus:border-blue-600"></textarea>
+      <p id="formErr" class="text-red-600 text-xs font-bold hidden"></p>
+      <div class="flex justify-between items-baseline bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2">
+        <div>
+          <span class="text-[11px] font-bold text-slate-700 block">Estimated Total</span>
+          <span id="savedSummary" class="text-[11px] text-emerald-700 font-extrabold"></span>
+        </div>
+        <span id="total" class="text-xl font-extrabold font-mono text-ink">₹0</span>
+      </div>
+      <button id="checkout" type="button" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-extrabold py-3 rounded-xl inline-flex items-center justify-center gap-2 text-sm shadow-md transition-all">
+        <span data-i="wa" data-s="17"></span>Send Order on WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast fixed left-1/2 -translate-x-1/2 bottom-4 z-[70] opacity-0 translate-y-3 pointer-events-none bg-slate-900 text-white text-xs sm:text-sm font-semibold rounded-full pl-4 pr-2 py-2 flex items-center gap-2.5 shadow-2xl border border-white/15" role="status" aria-live="polite"></div>
+
+  <style>@media (max-width:639px){body{padding-bottom:72px}}</style><nav id="callBar" aria-label="Quick actions" class="sm:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-line shadow-[0_-4px_16px_rgba(0,0,0,.08)] grid grid-cols-3 text-[12px] font-extrabold text-ink"><a id="cbCall" href="#" class="flex flex-col items-center gap-0.5 py-2.5"><span aria-hidden="true">📞</span>Call</a><a id="cbWa" href="#" target="_blank" rel="noopener" class="flex flex-col items-center gap-0.5 py-2.5 text-emerald-700"><span aria-hidden="true">💬</span>WhatsApp</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Bombay+Hardware+and+Electricals+Bhootnath+Road+Patna+800026" target="_blank" rel="noopener" class="flex flex-col items-center gap-0.5 py-2.5"><span aria-hidden="true">📍</span>Directions</a></nav><script>window.BHE_PAGE={"type":"home","base":"","rows":{"rowFeatured":[25,35,50,65,75,85,90,105],"rowNew":[69,33,77,98,104,45,89,116],"rowOffers":[32,47,77,2,4,17,19,34]}}</script>
+<script src="assets/js/data.js"></script><script>window.BHE||document.write('<div style="position:fixed;z-index:99;left:0;right:0;top:0;background:#BE123C;color:#fff;padding:12px;font:14px system-ui">Product data file <b>assets/js/data.js</b> did not load, so products cannot be shown. Shop owner: make sure this file is uploaded (run <code>node build.mjs</code>) or re-run the GitHub workflow.</div>')</script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/visuals.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/hero.js"></script>
+<script src="assets/js/calculator.js"></script>
+<script src="assets/js/filters.js"></script>
+<script src="assets/js/category-strip.js"></script>
+<script src="assets/js/search-rank.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/compare.js"></script>
+<script src="assets/js/quickview.js"></script>
+<script src="assets/js/order-check.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/rows.js"></script>
+<script src="assets/js/boot.js"></script>
+</body>
+</html>
